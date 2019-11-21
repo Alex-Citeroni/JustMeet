@@ -1,14 +1,14 @@
 package codeJava;
 
 public class Evento {
-    String nome;
-    String luogo;
-    String data;
-    String durata;
-    String partecipanti;
-    String descrizione;
-    String tipo;
-    String categoria;
+   private String nome;
+   private String luogo;
+   private String data;
+   private String durata;
+   private String partecipanti;
+   private String descrizione;
+   private String tipo;
+   private String categoria;
 
     public Evento(String nome, String luogo, String data, String durata,
                   String partecipanti, String descrizione,

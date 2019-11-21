@@ -2,24 +2,24 @@ package codeJava;
 
 public class Utente {
 
-        String username;
-        String nome;
-        int età;
-        String sesso;
-        String luogoDiNascita;
-        int numeroCellulare;
-        String email;
-        String titoloDiStudio;
-        String interessi;
-        String metodoDiPagamento;
-        String preferiti;
+      private   String username;
+      private   String nome;
+      private int eta;
+      private   String sesso;
+      private   String luogoDiNascita;
+      private   int numeroCellulare;
+      private   String email;
+      private   String titoloDiStudio;
+      private   String interessi;
+      private   String metodoDiPagamento;
+      private   String preferiti;
 
-        public Utente(String username, String nome, int età, String sesso, String luogoDiNascita,
+        public Utente(String username, String nome, int eta, String sesso, String luogoDiNascita,
                       int numeroCellulare, String email, String titoloDiStudio,
                       String interessi, String metodoDiPagamento, String preferiti) {
             this.username = username;
             this.nome = nome;
-            this.età = età;
+            this.eta = eta;
             this.sesso = sesso;
             this.luogoDiNascita = luogoDiNascita;
             this.numeroCellulare = numeroCellulare;
@@ -46,12 +46,12 @@ public class Utente {
             this.nome = nome;
         }
 
-        public int getEtà() {
-            return età;
+        public int getEta() {
+            return eta;
         }
 
-        public void setEtà(int età) {
-            this.età = età;
+        public void setEta(int eta) {
+            this.eta = eta;
         }
 
         public String getSesso() {
