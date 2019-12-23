@@ -15,34 +15,40 @@
 <body>
 
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#"> <img
-			src="resources/img/logo.png" width="30" height="30"
-			class="d-inline-block align-top" alt=""> JustMeet
-		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+		<div class="container-xl">
+			<a class="navbar-brand" href="#" style="padding-top: 7px"> <img
+				src="resources/img/logo.png" width="50" height="45"
+				class="d-inline-block align-top" alt=""
+				style="padding-top: 5px; padding-right: 10px;">JustMeet
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<div class="collapse navbar-collapse navbar-fixed-top"
-			id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-				<li class="nav-item"><a class="nav-link"
-					onclick="document.forms['logoutForm'].submit()">Logout</a></li>
-			</ul>
-
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search"
-					placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			</form>
+			<div class="collapse navbar-collapse" id="navbarsExample07XL">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="profilo.jsp">Profilo</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="dropdown07XL"
+						data-toggle="dropdown" aria-expanded="false">Eventi</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown07XL">
+							<a class="dropdown-item" href="#">Cerca evento</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="eventcreation.jsp">Crea evento</a>
+						</div></li>
+					<li class="nav-item"><a class="nav-link"
+						onclick="document.forms['logoutForm'].submit()">Logout</a></li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Cerca evento"
+						aria-label="Search">
+				</form>
+			</div>
 		</div>
 	</nav>
 
@@ -56,43 +62,57 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
+				<img
+					src="https://source.unsplash.com/1600x700/?soccer,basketball,volleyball,tablegame"
+					class="d-block w-100" alt="">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Cerca</h5>
+					<p>Cerca tra gli eventi già creati uno che fa al caso tuo.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="https://source.unsplash.com/1600x700/?boardgame"
+					class="d-block w-100" alt="">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Partecipa</h5>
+					<p>Partecipa ad eventi di altri utenti e fai nuove amicizie!</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img
+					src="https://source.unsplash.com/1600x700/?study,school,friends"
+					class="d-block w-100" alt="">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Crea</h5>
+					<p>Nessun evento già presente soddisfa ciò che cerchi? Creane
+						uno tu.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
 				<img src="https://source.unsplash.com/1600x700/?sport"
 					class="d-block w-100" alt="">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>First slide label</h5>
-					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					<h5>Trova</h5>
+					<p>Grazie all'evento da te creato hai la possibilità di trovare
+						persone con i tuoi stessi interessi.</p>
 				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="https://source.unsplash.com/1600x700/?study"
-					class="d-block w-100" alt="">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>Second slide label</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="https://source.unsplash.com/1600x700/?soccer"
-					class="d-block w-100" alt="">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>Third slide label</h5>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl
-						consectetur.</p>
-				</div>
-			</div>
+
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleCaptions"
 			role="button" data-slide="prev"> <span
 			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Previous</span>
+			class="sr-only">Indietro</span>
 		</a> <a class="carousel-control-next" href="#carouselExampleCaptions"
 			role="button" data-slide="next"> <span
 			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Next</span>
+			class="sr-only">Avanti</span>
 		</a>
 	</div>
-
-	<h2>       Benvenuto in JustMeet ${pageContext.request.userPrincipal.name}! Scopri cosa puoi fare.</h2>
+	<hr>
+	<h2>Benvenuto in JustMeet
+		${pageContext.request.userPrincipal.name}! Scopri cosa puoi fare.</h2>
+	<hr>
 	<br>
 	<br>
 
@@ -100,20 +120,25 @@
 		<div class="row">
 			<div class="col-md-6">
 				<h3>Crea il tuo evento.</h3>
-				<p>Stai organizzando una partita di calcetto? Hai bisogno di qualcuno che ti spieghi quel dannato argomento di matematica? Oppure sei piu tipo da Dungeons&Dragons? 
-				Sappiamo quanto te che la ricerca di compagni potrebbere essere estenuante ma questo è il posto giusto per te! Crea un tuo evento e se qualcuno sarà interessato si unirà alla tua attività. </p>
-				<button type="button" class="btn btn-outline-primary">Crea</button>
+				<p>Stai organizzando una partita di calcetto? Hai bisogno di
+					qualcuno che ti spieghi quel dannato argomento di matematica?
+					Oppure sei piu tipo da Dungeons&Dragons? Sappiamo quanto te che la
+					ricerca di compagni potrebbere essere estenuante ma questo è il
+					posto giusto per te! Crea un tuo evento e se qualcuno sarà
+					interessato si unirà alla tua attività.</p>
+				<a href="eventcreation.jsp" class="btn btn-info" role="button">Crea</a>
 			</div>
 			<div class="col-md-6">
 				<h3>Partecipa a un evento.</h3>
-				<p>Hai voglia di una partita a basket o semplicemente dei compagni di studio ma non sai a chi chiedere? Cerca tra gli eventi già creati se ce n'è qualcuno al caso tuo! </p>
-				<button type="button" class="btn btn-outline-primary">Partecipa</button>
+				<p>Hai voglia di una partita a basket o semplicemente dei
+					compagni di studio ma non sai a chi chiedere? Cerca tra gli eventi
+					già creati se ce n'è qualcuno al caso tuo!</p>
+				<a href="#link" class="btn btn-info" role="button">Partecipa</a>
 			</div>
-			
 		</div>
-
-
 	</div>
+	<br>
+	<br>
 
 
 
