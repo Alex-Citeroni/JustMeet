@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Log in with your account</title>
+<title>JustMeet: Log in or register</title>
 
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -30,10 +30,12 @@
 
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Log
 					In</button>
-				<h4 class="text-center">
-					<a href="${contextPath}/registration">Create an account</a>
-				</h4>
 			</div>
+			<h4 class="text-center">
+				<a href="${contextPath}/registration"
+					class="btn btn-lg btn-primary btn-block" role="button">Create
+					an account</a>
+			</h4>
 		</form>
 	</div>
 
