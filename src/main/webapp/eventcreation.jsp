@@ -57,7 +57,7 @@
 	<hr>
 	<div class="container">
 		<form:form method="POST" modelAttribute="eventForm"
-			class="form-eventcreation">
+			class="was-validated">
 			<h1 class="form-eventcreation-heading">Crea il tuo Evento</h1>
 			<hr>
 			<div class="form-row">
