@@ -1,23 +1,25 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Creazione evento</title>
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/style.css">
 
+<link rel="stylesheet"
+	href="${contextPath}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${contextPath}/resources/css/style.css">
 </head>
+
 <body>
 
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-xl">
-			<a class="navbar-brand" href="#" style="padding-top: 7px"> <img
-				src="resources/img/logo.png" width="50" height="45"
+			<a class="navbar-brand" href="welcome.jsp" style="padding-top: 7px">
+				<img src="resources/img/logo.png" width="50" height="45"
 				class="d-inline-block align-top" alt=""
 				style="padding-top: 5px; padding-right: 10px;">JustMeet
 			</a>
@@ -53,16 +55,16 @@
 	</nav>
 
 	<hr>
-	<hr>
 	<div class="container">
-		<h1>Crea il tuo Evento.</h1>
-		<hr>
-		<form class="was-validated">
+		<form:form method="POST" modelAttribute="eventForm"
+			class="form-eventcreation">
+			<h1 class="form-eventcreation-heading">Crea il tuo Evento</h1>
+			<hr>
 			<div class="form-row">
-				<div class="col-md-4 mb-3">
-					<label for="validationServer03">Titolo</label> <input type="text"
-						class="form-control is-invalid" id="validationServer03"
-						placeholder="Inserisci un titolo" required>
+				<div class="mb-3 col-md-6">
+					<label for="validationTextarea">Titolo</label>
+					<textarea class="form-control is-invalid" id="validationTextarea"
+						placeholder="Inserisci una descrizione" required></textarea>
 				</div>
 			</div>
 			<div class="form-row">
@@ -145,13 +147,18 @@
 						class="form-control is-invalid" id="validationServer03"
 						placeholder="Inserisci città" required>
 				</div>
+				<div class="col-md-2 mb-3">
+					<label for="validationServer03">Provincia</label> <input
+						type="text" class="form-control is-invalid"
+						id="validationServer03" placeholder="Inserisci provincia" required>
+				</div>
 				<div class="col-md-3 mb-3">
 					<label for="validationServer03">Indirizzo</label> <input
 						type="text" class="form-control is-invalid"
 						id="validationServer03" placeholder="Es. Via Roma 1" required>
 				</div>
-				<div class="col-md-2 mb-3">
-					<label for="validationServer03">Data</label> <input type="number"
+				<div class="col-md-3 mb-3">
+					<label for="validationServer03">Data</label> <input type="date"
 						class="form-control is-invalid" id="validationServer03"
 						placeholder="GG/MM/YYYY" required>
 				</div>
@@ -164,20 +171,21 @@
 						required>
 				</div>
 			</div>
-		</form>
-		<div class="form-group col-md-4"
-			style="padding-left: 0px; padding-right: 5px;">
-			<label for="inputCity">Quota da suddividere tra i
-				partecipanti (Opzionale)</label> <input type="number" class="form-control"
-				id="inputCity" placeholder="$">
-		</div>
-		<div class="custom-file col-md-6">
-			<input type="file" class="custom-file-input" id="customFile">
-			<label class="custom-file-label" for="customFile">Inserisci
-				una copertina (Facoltativo)</label>
-		</div>
-		<hr>
-		<button type="submit" class="btn btn-primary">Crea</button>
+
+			<div class="form-group col-md-4"
+				style="padding-left: 0px; padding-right: 5px;">
+				<label for="inputCity">Quota da suddividere tra i
+					partecipanti (Opzionale)</label> <input type="number" class="form-control"
+					id="inputCity" placeholder="$">
+			</div>
+			<div class="custom-file col-md-6">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Inserisci
+					una copertina (Facoltativo)</label>
+			</div>
+			<hr>
+			<button type="submit" class="btn btn-primary">Crea</button>
+		</form:form>
 		<br> <br>
 	</div>
 
@@ -193,7 +201,6 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
-

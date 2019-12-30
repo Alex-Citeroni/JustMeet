@@ -109,14 +109,12 @@
 			class="sr-only">Avanti</span>
 		</a>
 	</div>
-	<hr>
-	<hr>
 	<br>
 	<br>
-
 	<div class="container">
 		<h2>Benvenuto in JustMeet
 			${pageContext.request.userPrincipal.name}! Scopri cosa puoi fare</h2>
+		<hr>
 		<div class="row">
 			<div class="col-md-6">
 				<h3>Crea il tuo evento</h3>
