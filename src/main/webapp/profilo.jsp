@@ -8,8 +8,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Il tuo profilo</title>
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet"
+	href="${contextPath}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${contextPath}/resources/css/common.css">
 
 </head>
 <body>
@@ -52,7 +53,21 @@
 		</div>
 	</nav>
 
-
+	<hr>
+	<div class="container">
+		<form method="POST" action="${contextPath}/profilo"
+			class="was-validated">
+			<h2 class="form-heading">${pageContext.request.userPrincipal.name}</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Cancella account</h3>
+					<span>${error}</span> <input type="hidden"
+						name="${_csrf.parameterName}" value="${_csrf.token}" />
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Delete</button>
+				</div>
+			</div>
+		</form>
+	</div>
 
 
 
@@ -72,6 +87,6 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

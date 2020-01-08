@@ -7,13 +7,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EventServiceImpl implements EventService {
-
 	@Autowired
 	private EventRepository eventRepository;
 
 	@Override
 	public void save(Event event) {
 		eventRepository.save(event);
+	}
+
+	@Override
+	public void delete(Event event) {
+		eventRepository.delete(event);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.project.just_meet.model.Event;
 
 @Repository
-public class EventDaoImpl extends JdbcDaoSupport implements EventDao{
+public class EventDaoImpl extends JdbcDaoSupport implements EventDao {
 
 	@Autowired
 	DataSource dataSource;
@@ -24,8 +24,10 @@ public class EventDaoImpl extends JdbcDaoSupport implements EventDao{
 	public void insertEvent(Event evento) {
 		String sql = "INSERT INTO event " + "(id, cost, participants, participan, title, place, "
 				+ "street, province, description, category, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		getJdbcTemplate().update(sql, new Object[] { evento.getId(),evento.getCost(),evento.getParticipants(), evento.getParticipan(), evento.getTitle(), evento.getPlace(),
-				evento.getStreet(),evento.getProvince(),evento.getDescription(),evento.getCategory(),evento.getDate()});
+		getJdbcTemplate().update(sql,
+				new Object[] { evento.getId(), evento.getCost(), evento.getParticipants(), evento.getParticipan(),
+						evento.getTitle(), evento.getPlace(), evento.getStreet(), evento.getProvince(),
+						evento.getDescription(), evento.getCategory(), evento.getDate() });
 	}
 
 	@Override
@@ -40,6 +42,4 @@ public class EventDaoImpl extends JdbcDaoSupport implements EventDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 }

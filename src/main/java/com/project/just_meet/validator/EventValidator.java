@@ -24,25 +24,25 @@ public class EventValidator implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "title", "NotEmpty");
 		if (event.getTitle().length() < 6 || event.getTitle().length() > 32)
-			errors.rejectValue("title", "Size.eventForm.title");
+			errors.rejectValue("title", "Size.eventcreationForm.title");
 
 		if (eventService.findByTitle(event.getTitle()) != null)
-			errors.rejectValue("title", "Duplicate.eventForm.title");
+			errors.rejectValue("title", "Duplicate.eventcreationForm.title");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "NotEmpty");
 		if (event.getDescription().length() < 10 || event.getDescription().length() > 200)
-			errors.rejectValue("description", "Size.eventForm.description");
-		
+			errors.rejectValue("description", "Size.eventcreationForm.description");
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "place", "NotEmpty");
 		if (event.getPlace().length() < 1)
-			errors.rejectValue("place", "Size.eventForm.place");
-		
+			errors.rejectValue("place", "Size.eventcreationForm.place");
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "street", "NotEmpty");
 		if (event.getStreet().length() < 1)
-			errors.rejectValue("street", "Size.eventForm.street");
-		
+			errors.rejectValue("street", "Size.eventcreationForm.street");
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "province", "NotEmpty");
 		if (event.getProvince().length() < 1)
-			errors.rejectValue("province", "Size.eventForm.province");
+			errors.rejectValue("province", "Size.eventcreationForm.province");
 	}
 }

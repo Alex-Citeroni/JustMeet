@@ -51,7 +51,7 @@
 			</div>
 		</div>
 	</nav>
-
+	<hr>
 	<div class="container">
 		<h2>${pageContext.request.userPrincipal.name}</h2>
 		<div class="row">

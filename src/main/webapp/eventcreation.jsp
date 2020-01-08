@@ -9,9 +9,10 @@
 <meta charset="utf-8">
 <title>Creazione evento</title>
 
-<link rel="stylesheet"
-	href="${contextPath}/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="${contextPath}/resources/css/style.css">
+<link href="${contextPath}/resources/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -58,19 +59,19 @@
 	<div class="container">
 		<form:form method="POST" modelAttribute="eventForm"
 			class="was-validated">
-			<h1 class="form-eventcreation-heading">Crea il tuo Evento</h1>
+			<h1 class="form-heading">Crea il tuo Evento</h1>
 			<hr>
 			<div class="form-row">
 				<div class="mb-3 col-md-6">
 					<label for="validationTextarea">Titolo</label>
-					<textarea class="form-control is-invalid" id="validationTextarea"
-						placeholder="Inserisci una descrizione" required></textarea>
+					<textarea class="form-control" id="validationTextarea"
+						placeholder="Inserisci un titolo" required></textarea>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="mb-3 col-md-6">
 					<label for="validationTextarea">Descrizione</label>
-					<textarea class="form-control is-invalid" id="validationTextarea"
+					<textarea class="form-control" id="validationTextarea"
 						placeholder="Inserisci una descrizione" required></textarea>
 				</div>
 			</div>
@@ -78,7 +79,8 @@
 				<div class="form-group col-md-2">
 					<label for="exampleFormControlSelect1">Numero minimo di
 						partecipanti</label> <select class="form-control"
-						id="exampleFormControlSelect1">
+						id="exampleFormControlSelect1" required>
+						<option></option>
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -106,7 +108,8 @@
 				<div class="form-group col-md-2">
 					<label for="exampleFormControlSelect1">Numero massimo di
 						partecipanti</label> <select class="form-control"
-						id="exampleFormControlSelect1">
+						id="exampleFormControlSelect1" required>
+						<option></option>
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -133,55 +136,52 @@
 				</div>
 				<div class="col-md-3 mb-3" style="padding-top: 24px">
 					<label for="validationServer04">Categoria</label> <select
-						class="custom-select is-invalid" id="validationServer04" required>
-						<option value="1">Sport</option>
-						<option value="2">Giochi</option>
-						<option value="3">Istruzione</option>
-						<option value="3">Altro...</option>
+						class="form-control" id="validationServer04" required>
+						<option></option>
+						<option>Sport</option>
+						<option>Giochi</option>
+						<option>Istruzione</option>
+						<option>Altro...</option>
 					</select>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="col-md-2 mb-3">
 					<label for="validationServer03">Città</label> <input type="text"
-						class="form-control is-invalid" id="validationServer03"
+						class="form-control" id="validationServer03"
 						placeholder="Inserisci città" required>
 				</div>
 				<div class="col-md-2 mb-3">
 					<label for="validationServer03">Provincia</label> <input
-						type="text" class="form-control is-invalid"
-						id="validationServer03" placeholder="Inserisci provincia" required>
+						type="text" class="form-control" id="validationServer03"
+						placeholder="Inserisci provincia" required>
 				</div>
 				<div class="col-md-3 mb-3">
 					<label for="validationServer03">Indirizzo</label> <input
-						type="text" class="form-control is-invalid"
-						id="validationServer03" placeholder="Es. Via Roma 1" required>
+						type="text" class="form-control" id="validationServer03"
+						placeholder="Es. Via Roma 1" required>
 				</div>
 				<div class="col-md-3 mb-3">
 					<label for="validationServer03">Data</label> <input type="date"
-						class="form-control is-invalid" id="validationServer03"
-						placeholder="GG/MM/YYYY" required>
+						class="form-control" id="validationServer03" required>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="col-md-4 mb-3">
 					<label for="validationServer03">Nome luogo</label> <input
-						type="text" class="form-control is-invalid"
-						id="validationServer03" placeholder="Es. Campetto Salaria"
-						required>
+						type="text" class="form-control" id="validationServer03"
+						placeholder="Es. Campetto Salaria" required>
 				</div>
 			</div>
-
 			<div class="form-group col-md-4"
 				style="padding-left: 0px; padding-right: 5px;">
 				<label for="inputCity">Quota da suddividere tra i
-					partecipanti (Opzionale)</label> <input type="number" class="form-control"
+					partecipanti</label> <input type="number" class="form-control"
 					id="inputCity" placeholder="$">
 			</div>
-			<div class="custom-file col-md-6">
-				<input type="file" class="custom-file-input" id="customFile">
-				<label class="custom-file-label" for="customFile">Inserisci
-					una copertina (Facoltativo)</label>
+			<div class="form-group">
+				<label for="FormFile">Inserisci una copertina</label> <input
+					type="file" class="form-control-file" id="FormFile">
 			</div>
 			<hr>
 			<button type="submit" class="btn btn-primary">Crea</button>

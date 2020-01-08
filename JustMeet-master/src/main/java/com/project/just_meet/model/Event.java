@@ -1,18 +1,15 @@
 package com.project.just_meet.model;
 
-
-
-
 public class Event {
-	
+
 	private long id;
 
 	private int cost, participants, participan;
 
 	private String title, place, street, province, description, category, date;
 
-	public Event(long id, int cost, int participants, int participan, String title, String place, String street, String province,
-			String description, String category, String date) {
+	public Event(long id, int cost, int participants, int participan, String title, String place, String street,
+			String province, String description, String category, String date) {
 		this.id = id;
 		this.cost = cost;
 		this.participants = participants;
@@ -57,11 +54,11 @@ public class Event {
 	public int getParticipan() {
 		return participan;
 	}
-	
+
 	public void setParticipants(int partecipants) {
 		this.participants = partecipants;
 	}
-	
+
 	public void setParticipan(int participan) {
 		this.participan = participan;
 	}

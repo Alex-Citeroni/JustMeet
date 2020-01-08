@@ -9,10 +9,10 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private int cost, participan;
+	private int cost, participan, participants;
 
 	private String title, place, street, province, description, category, date;
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -25,56 +25,56 @@ public class Event {
 		return date;
 	}
 
-	public void setDate(String data) {
-		this.date = data;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public int getCost() {
 		return cost;
 	}
 
-	public void setCost(int costo) {
-		this.cost = costo;
+	public void setCost(int cost) {
+		this.cost = cost;
 	}
 
 	public int getParticipan() {
 		return participan;
 	}
 
-	public void setParticipan(int partecipanti) {
-		this.participan = partecipanti;
+	public void setParticipan(int participan) {
+		this.participan = participan;
 	}
 
 	public String getPlace() {
 		return place;
 	}
 
-	public void setPlace(String luogo) {
-		this.place = luogo;
+	public void setPlace(String place) {
+		this.place = place;
 	}
 
 	public String getTitle() {
 		return title;
 	}
 
-	public void setTitle(String nomeEvento) {
-		this.title = nomeEvento;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(String categoria) {
-		this.category = categoria;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String descrizione) {
-		this.description = descrizione;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getStreet() {
@@ -91,5 +91,13 @@ public class Event {
 
 	public void setProvince(String province) {
 		this.province = province;
+	}
+
+	public int getParticipants() {
+		return participants;
+	}
+
+	public void setParticipants(int participants) {
+		this.participants = participants;
 	}
 }

@@ -24,7 +24,7 @@ public class EventController {
 		return "eventcreation";
 	}
 
-	@PostMapping("/eventcreatiom")
+	@PostMapping("/eventcreation")
 	public String eventcreation(@ModelAttribute("eventForm") Event eventForm, BindingResult bindingResult) {
 		eventValidator.validate(eventForm, bindingResult);
 		
@@ -33,11 +33,11 @@ public class EventController {
 		
 		eventService.save(eventForm);
 		
-		return "redirect:/event";
+		return "redirect:/events";
 	}
 
 	@GetMapping("/event")
-	public String events(Model model, String error, String delete) {
+	public String event(Model model, String error, String delete) {
 		if (error != null)
 			model.addAttribute("error", "There was an error creating the event");
 		
