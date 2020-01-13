@@ -42,11 +42,23 @@ public class EventValidator implements Validator {
 			errors.rejectValue("street", "Size.eventForm.street");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "NotEmpty");
-		if (event.getStreet().length() < 1)
+		if (event.getCity().length() < 1)
 			errors.rejectValue("city", "Size.eventForm.city");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "province", "NotEmpty");
 		if (event.getProvince().length() < 1)
 			errors.rejectValue("province", "Size.eventForm.province");
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participan", "NotEmpty");
+		if (event.getParticipan() < 1)
+			errors.rejectValue("participan", "Size.eventForm.participan");
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "NotEmpty");
+		if (event.getCategory().length() < 1)
+			errors.rejectValue("category", "Size.eventForm.category");
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "date", "NotEmpty");
+		if (event.getDate().length() < 1)
+			errors.rejectValue("date", "Size.eventForm.date");
 	}
 }
