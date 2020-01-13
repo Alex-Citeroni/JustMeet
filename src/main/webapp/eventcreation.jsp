@@ -99,10 +99,14 @@
 			</div>
 		</spring:bind>
 		<hr>
-		<div class="form-group">
-			<h5>Inserisci una copertina</h5>
-			<input type="file" class="form-control-file" id="FormFile">
-		</div>
+		<spring:bind path="image">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Inserisci una copertina</h5>
+				<form:input type="file" path="image" class="form-control-file" id="FormFile"
+					placeholder="Image" autofocus="true"></form:input>
+				<form:errors path="image"></form:errors>
+			</div>
+		</spring:bind>
 		<hr>
 		<button type="submit" class="btn btn-primary">Crea</button>
 	</form:form>

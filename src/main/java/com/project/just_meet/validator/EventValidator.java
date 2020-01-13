@@ -60,5 +60,9 @@ public class EventValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "date", "NotEmpty");
 		if (event.getDate().length() < 1)
 			errors.rejectValue("date", "Size.eventForm.date");
+		
+		
+		if (event.getImage().length() > 1000)
+			errors.rejectValue("image", "Size.eventForm.image");
 	}
 }

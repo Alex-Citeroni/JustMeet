@@ -1,5 +1,7 @@
 package com.project.just_meet.model;
 
+import java.io.File;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,8 @@ public class Event {
 	private Long id;
 
 	private int cost, participan;
+
+	private File image;
 
 	private String title, place, street, province, description, category, date, city;
 
@@ -99,5 +103,13 @@ public class Event {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public File getImage() {
+		return image;
+	}
+
+	public void setImage(File image) {
+		this.image = image;
 	}
 }
