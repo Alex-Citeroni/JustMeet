@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +26,10 @@
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div class="collapse navbar-collapse" id="navbarsExample07XL">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="welcome.jsp">Home <span class="sr-only">(current)</span>
+						href="welcome">Home <span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="profilo">Profilo</a></li>
 
@@ -52,7 +50,6 @@
 			</div>
 		</div>
 	</nav>
-
 	<div class="container">
 		<c:if test="${pageContext.request.userPrincipal.name != null}">
 			<form id="logoutForm" method="POST" action="${contextPath}/logout">

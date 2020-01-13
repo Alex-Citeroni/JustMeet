@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -28,7 +29,6 @@ public class UserController {
 	@GetMapping("/registration")
 	public String registration(Model model) {
 		model.addAttribute("userForm", new User());
-		System.out.println("Utente incredibilmente bello");
 
 		return "registration";
 	}
@@ -64,6 +64,12 @@ public class UserController {
 	}
 
 	@GetMapping("/profilo")
+	public String profilo(Model model) {
+
+		return "profilo";
+	}
+	
+	@PostMapping("/profilo")
 	public String profilo(Model model, String delete, User user) {
 		if (delete != null) {
 			userRepository.delete(user);
