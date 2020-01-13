@@ -1,206 +1,109 @@
+<jsp:include page="common/header.jsp"></jsp:include>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Creazione evento</title>
-
-<link href="${contextPath}/resources/css/bootstrap.min.css"
-	rel="stylesheet">
-<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-xl">
-			<a class="navbar-brand" href="welcome.jsp" style="padding-top: 7px">
-				<img src="resources/img/logo.png" width="50" height="45"
-				class="d-inline-block align-top" alt=""
-				style="padding-top: 5px; padding-right: 10px;">JustMeet
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarsExample07XL">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="welcome.jsp">Home <span class="sr-only">(current)</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" href="profilo.jsp">Profilo</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="dropdown07XL"
-						data-toggle="dropdown" aria-expanded="false">Eventi</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown07XL">
-							<a class="dropdown-item" href="#">Cerca evento</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="eventcreation.jsp">Crea evento</a>
-						</div></li>
-					<li class="nav-item"><a class="nav-link"
-						onclick="document.forms['logoutForm'].submit()">Logout</a></li>
-				</ul>
-				<form class="form-inline my-2 my-md-0">
-					<input class="form-control" type="text" placeholder="Cerca evento"
-						aria-label="Search">
-				</form>
+<div class="container">
+	<form:form method="POST" modelAttribute="eventForm">
+		<hr>
+		<hr>
+		<h1 class="form-heading">Crea il tuo Evento</h1>
+		<hr>
+		<spring:bind path="title">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Titolo</h5>
+				<form:input type="text" path="title" class="form-control"
+					placeholder="Title" autofocus="true"></form:input>
+				<form:errors path="title"></form:errors>
 			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="description">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Descrizione</h5>
+				<form:input type="text" path="description" class="form-control"
+					placeholder="Description" autofocus="true"></form:input>
+				<form:errors path="description"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="participan">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Partecipanti</h5>
+				<form:input type="number" path="participan" class="form-control"
+					placeholder="Participan" autofocus="true"></form:input>
+				<form:errors path="participan"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="category">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Categoria</h5>
+				<form:input type="text" path="category" class="form-control"
+					placeholder="Category" autofocus="true"></form:input>
+				<form:errors path="category"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="city">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Città</h5>
+				<form:input type="text" path="city" class="form-control"
+					placeholder="City" autofocus="true"></form:input>
+				<form:errors path="city"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="province">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Provincia</h5>
+				<form:input type="text" path="province" class="form-control"
+					placeholder="Province" autofocus="true"></form:input>
+				<form:errors path="province"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="street">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Via</h5>
+				<form:input type="text" path="street" class="form-control"
+					placeholder="Street" autofocus="true"></form:input>
+				<form:errors path="street"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="date">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Data</h5>
+				<form:input type="date" path="date" class="form-control"
+					placeholder="Date" autofocus="true"></form:input>
+				<form:errors path="date"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="place">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Luogo</h5>
+				<form:input type="text" path="place" class="form-control"
+					placeholder="Place" autofocus="true"></form:input>
+				<form:errors path="place"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<spring:bind path="cost">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<h5>Costo</h5>
+				<form:input type="number" path="cost" class="form-control"
+					placeholder="$" autofocus="true"></form:input>
+				<form:errors path="cost"></form:errors>
+			</div>
+		</spring:bind>
+		<hr>
+		<div class="form-group">
+			<h5>Inserisci una copertina</h5>
+			<input type="file" class="form-control-file" id="FormFile">
 		</div>
-	</nav>
-
-	<hr>
-	<div class="container">
-		<form:form method="POST" modelAttribute="eventForm"
-			class="was-validated">
-			<h1 class="form-heading">Crea il tuo Evento</h1>
-			<hr>
-			<div class="form-row">
-				<div class="mb-3 col-md-6">
-					<label for="validationTextarea">Titolo</label>
-					<textarea class="form-control" id="validationTextarea"
-						placeholder="Inserisci un titolo" required></textarea>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="mb-3 col-md-6">
-					<label for="validationTextarea">Descrizione</label>
-					<textarea class="form-control" id="validationTextarea"
-						placeholder="Inserisci una descrizione" required></textarea>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-md-2">
-					<label for="exampleFormControlSelect1">Numero minimo di
-						partecipanti</label> <select class="form-control"
-						id="exampleFormControlSelect1" required>
-						<option></option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-						<option>11</option>
-						<option>12</option>
-						<option>13</option>
-						<option>14</option>
-						<option>15</option>
-						<option>16</option>
-						<option>17</option>
-						<option>18</option>
-						<option>19</option>
-						<option>20</option>
-						<option>21</option>
-						<option>22</option>
-					</select>
-				</div>
-				<div class="form-group col-md-2">
-					<label for="exampleFormControlSelect1">Numero massimo di
-						partecipanti</label> <select class="form-control"
-						id="exampleFormControlSelect1" required>
-						<option></option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-						<option>11</option>
-						<option>12</option>
-						<option>13</option>
-						<option>14</option>
-						<option>15</option>
-						<option>16</option>
-						<option>17</option>
-						<option>18</option>
-						<option>19</option>
-						<option>20</option>
-						<option>21</option>
-						<option>22</option>
-					</select>
-				</div>
-				<div class="col-md-3 mb-3" style="padding-top: 24px">
-					<label for="validationServer04">Categoria</label> <select
-						class="form-control" id="validationServer04" required>
-						<option></option>
-						<option>Sport</option>
-						<option>Giochi</option>
-						<option>Istruzione</option>
-						<option>Altro...</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col-md-2 mb-3">
-					<label for="validationServer03">Città</label> <input type="text"
-						class="form-control" id="validationServer03"
-						placeholder="Inserisci città" required>
-				</div>
-				<div class="col-md-2 mb-3">
-					<label for="validationServer03">Provincia</label> <input
-						type="text" class="form-control" id="validationServer03"
-						placeholder="Inserisci provincia" required>
-				</div>
-				<div class="col-md-3 mb-3">
-					<label for="validationServer03">Indirizzo</label> <input
-						type="text" class="form-control" id="validationServer03"
-						placeholder="Es. Via Roma 1" required>
-				</div>
-				<div class="col-md-3 mb-3">
-					<label for="validationServer03">Data</label> <input type="date"
-						class="form-control" id="validationServer03" required>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col-md-4 mb-3">
-					<label for="validationServer03">Nome luogo</label> <input
-						type="text" class="form-control" id="validationServer03"
-						placeholder="Es. Campetto Salaria" required>
-				</div>
-			</div>
-			<div class="form-group col-md-4"
-				style="padding-left: 0px; padding-right: 5px;">
-				<label for="inputCity">Quota da suddividere tra i
-					partecipanti</label> <input type="number" class="form-control"
-					id="inputCity" placeholder="$">
-			</div>
-			<div class="form-group">
-				<label for="FormFile">Inserisci una copertina</label> <input
-					type="file" class="form-control-file" id="FormFile">
-			</div>
-			<hr>
-			<button type="submit" class="btn btn-primary">Crea</button>
-		</form:form>
-		<br> <br>
-	</div>
-
-
-	<div class="container">
-		<c:if test="${pageContext.request.userPrincipal.name != null}">
-			<form id="logoutForm" method="POST" action="${contextPath}/logout">
-				<input type="hidden" name="${_csrf.parameterName}"
-					value="${_csrf.token}" />
-			</form>
-		</c:if>
-	</div>
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
-</body>
-</html>
+		<hr>
+		<button type="submit" class="btn btn-primary">Crea</button>
+	</form:form>
+</div>
+<jsp:include page="common/footer.jsp"></jsp:include>

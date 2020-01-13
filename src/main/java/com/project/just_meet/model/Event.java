@@ -9,10 +9,10 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private int cost, participan, participants;
+	private int cost, participan;
 
-	private String title, place, street, province, description, category, date;
-	
+	private String title, place, street, province, description, category, date, city;
+
 	public Long getId() {
 		return id;
 	}
@@ -93,11 +93,11 @@ public class Event {
 		this.province = province;
 	}
 
-	public int getParticipants() {
-		return participants;
+	public String getCity() {
+		return city;
 	}
 
-	public void setParticipants(int participants) {
-		this.participants = participants;
+	public void setCity(String city) {
+		this.city = city;
 	}
 }

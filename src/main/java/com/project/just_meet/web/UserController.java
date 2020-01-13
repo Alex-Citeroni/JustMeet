@@ -28,6 +28,7 @@ public class UserController {
 	@GetMapping("/registration")
 	public String registration(Model model) {
 		model.addAttribute("userForm", new User());
+		System.out.println("Utente incredibilmente bello");
 
 		return "registration";
 	}
@@ -64,8 +65,10 @@ public class UserController {
 
 	@GetMapping("/profilo")
 	public String profilo(Model model, String delete, User user) {
-		if (delete != null)
+		if (delete != null) {
 			userRepository.delete(user);
+			model.addAttribute("message", "You have been delete successfully.");
+		}
 
 		return "profilo";
 	}
