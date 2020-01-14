@@ -1,7 +1,8 @@
 package com.project.just_meet.validator;
 
 import com.project.just_meet.model.User;
-import com.project.just_meet.service.UserService;
+import com.project.just_meet.service.user.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

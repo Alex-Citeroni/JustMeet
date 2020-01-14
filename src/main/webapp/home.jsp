@@ -1,4 +1,4 @@
-<jsp:include page="common/header.jsp"></jsp:include>
+<%@include file="common/header.jsp"%>
 <div id="carouselExampleCaptions" class="carousel slide"
 	data-ride="carousel">
 	<ol class="carousel-indicators">
@@ -66,11 +66,11 @@
 			<h3>Crea il tuo evento</h3>
 			<p>Stai organizzando una partita di calcetto? Hai bisogno di
 				qualcuno che ti spieghi quel dannato argomento di matematica? Oppure
-				sei piu tipo da Dungeons&Dragons? Sappiamo quanto te che la ricerca
-				di compagni potrebbere essere estenuante ma questo è il posto giusto
-				per te! Crea un tuo evento e se qualcuno sarà interessato si unirà
-				alla tua attività.</p>
-			<a href="eventcreation.jsp" class="btn btn-info" role="button">Crea</a>
+				sei piu tipo da Dungeons and Dragons? Sappiamo quanto te che la
+				ricerca di compagni potrebbere essere estenuante ma questo è il
+				posto giusto per te! Crea un tuo evento e se qualcuno sarà
+				interessato si unirà alla tua attività.</p>
+			<a href="eventCreation" class="btn btn-info" role="button">Crea</a>
 		</div>
 		<div class="col-md-6">
 			<h3>Partecipa a un evento</h3>
@@ -81,6 +81,4 @@
 		</div>
 	</div>
 </div>
-<br>
-<br>
-<jsp:include page="common/footer.jsp"></jsp:include>
+<%@include file="common/footer.jsp"%>

@@ -3,7 +3,7 @@ package com.project.just_meet.web;
 import com.project.just_meet.model.User;
 import com.project.just_meet.repository.UserRepository;
 import com.project.just_meet.service.SecurityService;
-import com.project.just_meet.service.UserService;
+import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +44,7 @@ public class UserController {
 
 		securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-		return "redirect:/welcome";
+		return "redirect:/home";
 	}
 
 	@GetMapping("/login")
@@ -58,23 +58,23 @@ public class UserController {
 		return "login";
 	}
 
-	@GetMapping({ "/", "/welcome" })
-	public String welcome(Model model) {
-		return "welcome";
+	@GetMapping({ "/", "/home" })
+	public String home(Model model) {
+		return "home";
 	}
 
 	@GetMapping("/profilo")
-	public String profilo(Model model) {
-
-		return "profilo";
-	}
-	
-	@PostMapping("/profilo")
 	public String profilo(Model model, String delete, User user) {
 		if (delete != null) {
 			userRepository.delete(user);
 			model.addAttribute("message", "You have been delete successfully.");
 		}
+
+		return "profilo";
+	}
+
+	@PostMapping("/profilo")
+	public String profilo(Model model) {
 
 		return "profilo";
 	}

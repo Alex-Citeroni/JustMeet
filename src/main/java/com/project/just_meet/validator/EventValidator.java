@@ -1,7 +1,8 @@
 package com.project.just_meet.validator;
 
 import com.project.just_meet.model.Event;
-import com.project.just_meet.service.EventService;
+import com.project.just_meet.service.event.EventService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

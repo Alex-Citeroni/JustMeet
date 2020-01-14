@@ -1,8 +1,9 @@
-package com.project.just_meet.service;
+package com.project.just_meet.service.user;
 
 import com.project.just_meet.model.User;
 import com.project.just_meet.repository.RoleRepository;
 import com.project.just_meet.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

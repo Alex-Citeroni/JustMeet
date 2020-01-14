@@ -16,8 +16,8 @@
 <header>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-xl">
-			<a class="navbar-brand" href="welcome" style="padding-top: 7px">
-				<img src="resources/img/logo.png" width="50" height="45"
+			<a class="navbar-brand" href="home" style="padding-top: 7px"> <img
+				src="resources/img/logo.png" width="50" height="45"
 				class="d-inline-block align-top" alt=""
 				style="padding-top: 5px; padding-right: 10px;">JustMeet
 			</a>
@@ -28,15 +28,15 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarsExample07XL">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="welcome">Home <span class="sr-only">(current)</span>
+					<li class="nav-item active"><a class="nav-link" href="home">Home
+							<span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="profilo">Profilo</a></li>
 
 					<li class="dropdown">
 						<button class="dropbtn">Eventi</button>
 						<div class="dropdown-content">
-							<a href="events">Cerca Evento</a> <a href="eventcreation">Crea
+							<a href="events">Cerca Evento</a> <a href="eventCreation">Crea
 								Evento</a>
 						</div>
 					</li>
@@ -60,3 +60,4 @@
 	</div>
 </header>
 <body>
+	<hr>

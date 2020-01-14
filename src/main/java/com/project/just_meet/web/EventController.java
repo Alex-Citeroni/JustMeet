@@ -1,7 +1,7 @@
 package com.project.just_meet.web;
 
 import com.project.just_meet.model.Event;
-import com.project.just_meet.service.EventService;
+import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.validator.EventValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,19 +17,19 @@ public class EventController {
 	@Autowired
 	private EventValidator eventValidator;
 
-	@GetMapping("/eventcreation")
-	public String eventcreation(Model model) {
+	@GetMapping("/eventCreation")
+	public String eventCreation(Model model) {
 		model.addAttribute("eventForm", new Event());
 		
-		return "eventcreation";
+		return "eventCreation";
 	}
 
-	@PostMapping("/eventcreation")
-	public String eventcreation(@ModelAttribute("eventForm") Event eventForm, BindingResult bindingResult) {
+	@PostMapping("/eventCreation")
+	public String eventCreation(@ModelAttribute("eventForm") Event eventForm, BindingResult bindingResult) {
 		eventValidator.validate(eventForm, bindingResult);
 		
 		if (bindingResult.hasErrors())
-			return "eventcreation";
+			return "eventCreation";
 		
 		eventService.save(eventForm);
 		

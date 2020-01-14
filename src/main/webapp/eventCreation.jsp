@@ -1,11 +1,6 @@
-<jsp:include page="common/header.jsp"></jsp:include>
-
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<%@include file="common/header.jsp"%>
 <div class="container">
 	<form:form method="POST" modelAttribute="eventForm">
-		<hr>
 		<hr>
 		<h1 class="form-heading">Crea il tuo Evento</h1>
 		<hr>
@@ -102,8 +97,8 @@
 		<spring:bind path="image">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
 				<h5>Inserisci una copertina</h5>
-				<form:input type="file" path="image" class="form-control-file" id="FormFile"
-					placeholder="Image" autofocus="true"></form:input>
+				<form:input type="file" path="image" class="form-control-file"
+					id="FormFile" placeholder="Image" autofocus="true"></form:input>
 				<form:errors path="image"></form:errors>
 			</div>
 		</spring:bind>
@@ -111,4 +106,4 @@
 		<button type="submit" class="btn btn-primary">Crea</button>
 	</form:form>
 </div>
-<jsp:include page="common/footer.jsp"></jsp:include>
+<%@include file="common/footer.jsp"%>

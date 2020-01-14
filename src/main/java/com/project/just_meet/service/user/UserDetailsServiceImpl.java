@@ -1,4 +1,4 @@
-package com.project.just_meet.service;
+package com.project.just_meet.service.user;
 
 import com.project.just_meet.model.Role;
 import com.project.just_meet.model.User;
