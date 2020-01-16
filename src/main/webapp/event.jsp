@@ -1,4 +1,4 @@
-<%@include file="common/header.jsp"%>
+<%@include file="common/header.jspf"%>
 <div class="container">
 	<h2>${pageContext.request.userPrincipal.name}</h2>
 	<div class="row">
@@ -9,4 +9,4 @@
 		</div>
 	</div>
 </div>
-<%@include file="common/footer.jsp"%>
+<%@include file="common/footer.jspf"%>

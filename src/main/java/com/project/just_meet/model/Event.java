@@ -1,6 +1,7 @@
 package com.project.just_meet.model;
 
 import java.io.File;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -11,11 +12,14 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private int cost, participan;
+	private int cost, participants;
 
 	private File image;
 
 	private String title, place, street, province, description, category, date, city;
+
+	@ManyToMany(mappedBy = "event")
+	private Set<User> user;
 
 	public Long getId() {
 		return id;
@@ -41,12 +45,12 @@ public class Event {
 		this.cost = cost;
 	}
 
-	public int getParticipan() {
-		return participan;
+	public int getParticipants() {
+		return participants;
 	}
 
-	public void setParticipan(int participan) {
-		this.participan = participan;
+	public void setParticipants(int participants) {
+		this.participants = participants;
 	}
 
 	public String getPlace() {
@@ -111,5 +115,13 @@ public class Event {
 
 	public void setImage(File image) {
 		this.image = image;
+	}
+
+	public Set<User> getUser() {
+		return user;
+	}
+
+	public void setUser(Set<User> user) {
+		this.user = user;
 	}
 }

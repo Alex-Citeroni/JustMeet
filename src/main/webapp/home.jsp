@@ -1,4 +1,4 @@
-<%@include file="common/header.jsp"%>
+<%@include file="common/header.jspf"%>
 <div id="carouselExampleCaptions" class="carousel slide"
 	data-ride="carousel">
 	<ol class="carousel-indicators">
@@ -43,7 +43,6 @@
 					persone con i tuoi stessi interessi.</p>
 			</div>
 		</div>
-
 	</div>
 	<a class="carousel-control-prev" href="#carouselExampleCaptions"
 		role="button" data-slide="prev"> <span
@@ -81,4 +80,4 @@
 		</div>
 	</div>
 </div>
-<%@include file="common/footer.jsp"%>
+<%@include file="common/footer.jspf"%>

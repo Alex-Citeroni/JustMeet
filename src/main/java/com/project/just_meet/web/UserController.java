@@ -64,18 +64,15 @@ public class UserController {
 	}
 
 	@GetMapping("/profilo")
-	public String profilo(Model model, String delete, User user) {
-		if (delete != null) {
-			userRepository.delete(user);
-			model.addAttribute("message", "You have been delete successfully.");
-		}
+	public String profilo(Model model) {
+		
 
 		return "profilo";
 	}
 
 	@PostMapping("/profilo")
-	public String profilo(Model model) {
-
+	public String profilo(Model model, User user) {
+		userRepository.delete(user);
 		return "profilo";
 	}
 }
