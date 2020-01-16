@@ -16,7 +16,7 @@ public class Event {
 
 	private File image;
 
-	private String title, place, street, province, description, category, date, city;
+	private String title, place, street, province, description, category, date, city, time;
 
 	@ManyToMany(mappedBy = "event")
 	private Set<User> user;
@@ -123,5 +123,13 @@ public class Event {
 
 	public void setUser(Set<User> user) {
 		this.user = user;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 }

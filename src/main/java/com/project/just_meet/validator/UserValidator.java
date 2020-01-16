@@ -26,14 +26,14 @@ public class UserValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
 		if (user.getUsername().length() < 6 || user.getUsername().length() > 32)
 			errors.rejectValue("username", "Size.userForm.username");
-		
+
 		if (userService.findByUsername(user.getUsername()) != null)
 			errors.rejectValue("username", "Duplicate.userForm.username");
-		
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty");
 		if (user.getEmail().length() < 6 || user.getEmail().length() > 32)
 			errors.rejectValue("email", "Size.userForm.email");
-		
+
 		if (userService.findByUsername(user.getEmail()) != null)
 			errors.rejectValue("email", "Duplicate.userForm.email");
 
@@ -43,5 +43,15 @@ public class UserValidator implements Validator {
 
 		if (!user.getPasswordConfirm().equals(user.getPassword()))
 			errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
+
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
+
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "surname", "NotEmpty");
+
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "sex", "NotEmpty");
+
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "NotEmpty");
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "birthday", "NotEmpty");
 	}
 }

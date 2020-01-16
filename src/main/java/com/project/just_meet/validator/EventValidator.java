@@ -31,37 +31,26 @@ public class EventValidator implements Validator {
 			errors.rejectValue("title", "Duplicate.eventForm.title");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "NotEmpty");
-		if (event.getDescription().length() < 10 || event.getDescription().length() > 200)
+		if (event.getDescription().length() < 50 || event.getDescription().length() > 200)
 			errors.rejectValue("description", "Size.eventForm.description");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "place", "NotEmpty");
-		if (event.getPlace().length() < 1)
-			errors.rejectValue("place", "Size.eventForm.place");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "street", "NotEmpty");
-		if (event.getStreet().length() < 1)
-			errors.rejectValue("street", "Size.eventForm.street");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "NotEmpty");
-		if (event.getCity().length() < 1)
-			errors.rejectValue("city", "Size.eventForm.city");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "province", "NotEmpty");
-		if (event.getProvince().length() < 1)
-			errors.rejectValue("province", "Size.eventForm.province");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
-		if (event.getParticipants() < 1)
+		if (event.getParticipants() <= 1)
 			errors.rejectValue("participants", "Size.eventForm.participants");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "NotEmpty");
-		if (event.getCategory().length() < 1)
-			errors.rejectValue("category", "Size.eventForm.category");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "date", "NotEmpty");
-		if (event.getDate().length() < 1)
-			errors.rejectValue("date", "Size.eventForm.date");
 		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "time", "NotEmpty");
 		
 		if (event.getImage().length() > 1000)
 			errors.rejectValue("image", "Size.eventForm.image");

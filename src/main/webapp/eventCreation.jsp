@@ -27,17 +27,19 @@
 		</div>
 		<hr>
 		<div class="row">
-			<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
-				<h5>Categoria</h5>
-				<form:select type="text" path="category" class="form-control"
-					placeholder="Category" autofocus="true">
-					<form:option value="Sport">Sport</form:option>
-					<form:option value="Giochi">Giochi</form:option>
-					<form:option value="Istruzione">Istruzione</form:option>
-					<form:option value="Altro">Altro...</form:option>
-				</form:select>
-				<form:errors path="category"></form:errors>
-			</div>
+			<spring:bind path="category">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
+					<h5>Categoria</h5>
+					<form:select type="text" path="category" class="form-control"
+						placeholder="Category" autofocus="true">
+						<form:option value="Sport">Sport</form:option>
+						<form:option value="Giochi">Giochi</form:option>
+						<form:option value="Istruzione">Istruzione</form:option>
+						<form:option value="Altro">Altro...</form:option>
+					</form:select>
+					<form:errors path="category"></form:errors>
+				</div>
+			</spring:bind>
 			<spring:bind path="participants">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Numero partecipanti</h5>
@@ -45,7 +47,6 @@
 						placeholder="Participants" autofocus="true"></form:input>
 					<form:errors path="participants"></form:errors>
 				</div>
-
 			</spring:bind>
 		</div>
 		<hr>
@@ -93,6 +94,16 @@
 					<form:errors path="date"></form:errors>
 				</div>
 			</spring:bind>
+			<spring:bind path="time">
+				<div class="form-group col-sm-3">
+					<h5>Orario</h5>
+					<form:input type="time" path="time" class="form-control"
+						placeholder="Time" autofocus="true"></form:input>
+				</div>
+			</spring:bind>
+		</div>
+		<hr>
+		<div class="row">
 			<spring:bind path="cost">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Costo</h5>
@@ -101,16 +112,15 @@
 					<form:errors path="cost"></form:errors>
 				</div>
 			</spring:bind>
+			<spring:bind path="image">
+				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<h5>Inserisci una copertina</h5>
+					<form:input type="file" path="image" class="form-control-file"
+						id="FormFile" placeholder="Image" autofocus="true"></form:input>
+					<form:errors path="image"></form:errors>
+				</div>
+			</spring:bind>
 		</div>
-		<hr>
-		<spring:bind path="image">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<h5>Inserisci una copertina</h5>
-				<form:input type="file" path="image" class="form-control-file"
-					id="FormFile" placeholder="Image" autofocus="true"></form:input>
-				<form:errors path="image"></form:errors>
-			</div>
-		</spring:bind>
 		<hr>
 		<button type="submit" class="btn btn-primary">Crea</button>
 	</form:form>
