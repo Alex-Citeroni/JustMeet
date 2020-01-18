@@ -18,7 +18,7 @@ public class Event {
 
 	private String title, place, address, province, description, category, date, city, time;
 
-	@ManyToMany(mappedBy = "event")
+	@ManyToMany(mappedBy = "events")
 	private Set<User> user;
 
 	public Long getId() {
