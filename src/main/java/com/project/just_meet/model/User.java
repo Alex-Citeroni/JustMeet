@@ -19,7 +19,7 @@ public class User {
 	private Set<Role> roles;
 
 	@ManyToMany
-	private Set<Event> event;
+	private Set<Event> events;
 
 	public Long getId() {
 		return id;
@@ -62,11 +62,11 @@ public class User {
 	}
 
 	public Set<Event> getEvents() {
-		return event;
+		return events;
 	}
 
 	public void setEvents(Set<Event> events) {
-		this.event = events;
+		this.events = events;
 	}
 
 	public String getEmail() {

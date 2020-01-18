@@ -36,7 +36,7 @@ public class EventValidator implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "place", "NotEmpty");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "street", "NotEmpty");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address", "NotEmpty");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "NotEmpty");
 

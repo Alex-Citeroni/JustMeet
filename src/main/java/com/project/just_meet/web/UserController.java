@@ -1,7 +1,6 @@
 package com.project.just_meet.web;
 
 import com.project.just_meet.model.User;
-import com.project.just_meet.repository.UserRepository;
 import com.project.just_meet.service.SecurityService;
 import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.UserValidator;
@@ -21,9 +20,6 @@ public class UserController {
 
 	@Autowired
 	private UserValidator userValidator;
-
-	@Autowired
-	private UserRepository userRepository;
 
 	@GetMapping("/registration")
 	public String registration(Model model) {
@@ -63,14 +59,14 @@ public class UserController {
 	}
 
 	@GetMapping("/profilo")
-	public String profilo(Model model) {
-		
+	public String profilo(Model model, User user) {
+		userService.delete(user);
 		return "profilo";
 	}
 
 	@PostMapping("/profilo")
-	public String profilo(Model model, User user) {
-		userRepository.delete(user);
+	public String profilo(Model model) {
+		
 		return "profilo";
 	}
 }

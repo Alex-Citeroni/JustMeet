@@ -67,12 +67,12 @@
 					<form:errors path="province"></form:errors>
 				</div>
 			</spring:bind>
-			<spring:bind path="street">
+			<spring:bind path="address">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-5">
 					<h5>Via</h5>
-					<form:input type="text" path="street" class="form-control"
-						placeholder="Street" autofocus="true"></form:input>
-					<form:errors path="street"></form:errors>
+					<form:input type="text" path="address" class="form-control"
+						placeholder="Address" autofocus="true"></form:input>
+					<form:errors path="address"></form:errors>
 				</div>
 			</spring:bind>
 		</div>
@@ -113,7 +113,7 @@
 				</div>
 			</spring:bind>
 			<spring:bind path="image">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>Inserisci una copertina</h5>
 					<form:input type="file" path="image" class="form-control-file"
 						id="FormFile" placeholder="Image" autofocus="true"></form:input>

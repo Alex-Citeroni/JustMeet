@@ -16,7 +16,7 @@ public class Event {
 
 	private File image;
 
-	private String title, place, street, province, description, category, date, city, time;
+	private String title, place, address, province, description, category, date, city, time;
 
 	@ManyToMany(mappedBy = "event")
 	private Set<User> user;
@@ -85,12 +85,12 @@ public class Event {
 		this.description = description;
 	}
 
-	public String getStreet() {
-		return street;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getProvince() {
