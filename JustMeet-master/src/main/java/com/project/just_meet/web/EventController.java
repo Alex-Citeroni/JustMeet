@@ -4,7 +4,6 @@ import com.project.just_meet.model.Event;
 import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.validator.EventValidator;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,8 +34,8 @@ public class EventController {
 			return "eventCreation";
 
 		eventService.save(eventForm);
-
-		return "redirect:/myEvents";
+		
+		return "redirect:/myEvents?username="+eventForm.getUsername();
 	}
 
 	@GetMapping("/event")
@@ -52,19 +51,18 @@ public class EventController {
 
 	@GetMapping("/events")
 	public String eventsList(Model model) {
-		List<Event> sportList = eventService.findAllByCategory("Sport");
-		List<Event> istrList = eventService.findAllByCategory("Istruzione");
-		List<Event> giochiList = eventService.findAllByCategory("Giochi");
-		model.addAttribute("sportList", sportList);
-		model.addAttribute("istrList", istrList);
-		model.addAttribute("giochiList", giochiList);
+		model.addAttribute("sportList", eventService.findAllByCategory("Sport"));
+		model.addAttribute("istrList", eventService.findAllByCategory("Istruzione"));
+		model.addAttribute("giochiList", eventService.findAllByCategory("Giochi"));
+		model.addAttribute("altroList", eventService.findAllByCategory("Altro"));
+		model.addAttribute("allList", eventService.findAll());
 	    return "/events";
 	}
 
 	@GetMapping("/myEvents")
-	public String myEvents(Model model) {
-		List<Event> list = eventService.findAllByUser(user);
-		model.addAttribute("list", list);
-		return "/myEvents";
+	public String getUserDetails(Model model, @RequestParam String username) {
+		model.addAttribute("list", eventService.findAllByUsername(username));
+	   
+	    return "/myEvents";
 	}
 }

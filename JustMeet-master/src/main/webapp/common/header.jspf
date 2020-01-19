@@ -36,7 +36,7 @@
 						class="nav-link dropdown-toggle" href="#" id="dropdown07XL"
 						data-toggle="dropdown" aria-expanded="false">Eventi</a>
 						<div class="dropdown-content">
-							<a class="dropdown-item" href="myEvents">I tuoi Eventi</a>
+							<a class="dropdown-item" href="myEvents?username=${pageContext.request.userPrincipal.name}">I tuoi Eventi</a>
 							<div class="dropdown-divider"></div>
 							<a href="events">Cerca Evento</a>
 							<div class="dropdown-divider"></div>

@@ -2,7 +2,6 @@ package com.project.just_meet.service.event;
 
 import java.util.List;
 import com.project.just_meet.model.Event;
-import com.project.just_meet.model.User;
 
 public interface EventService {
 	void save(Event event);
@@ -13,5 +12,7 @@ public interface EventService {
 
 	List<Event> findAllByCategory(String category);
 	
-	List<Event> findAllByUser(User user);
+	List<Event> findAllByUsername(String username);
+	
+	List<Event> findAll();
 }

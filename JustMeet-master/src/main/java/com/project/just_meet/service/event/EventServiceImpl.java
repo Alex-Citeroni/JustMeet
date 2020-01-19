@@ -1,7 +1,6 @@
 package com.project.just_meet.service.event;
 
 import com.project.just_meet.model.Event;
-import com.project.just_meet.model.User;
 import com.project.just_meet.repository.EventRepository;
 
 import java.util.List;
@@ -35,7 +34,12 @@ public class EventServiceImpl implements EventService {
 	}
 
 	@Override
-	public List<Event> findAllByUser(User user) {	
-		return  eventRepository.findAllByUser(user);
+	public List<Event> findAllByUsername(String username) {
+		return  eventRepository.findAllByUsername(username);
+	}
+	
+	@Override
+	public List<Event> findAll(){
+		return eventRepository.findAll();
 	}
 }

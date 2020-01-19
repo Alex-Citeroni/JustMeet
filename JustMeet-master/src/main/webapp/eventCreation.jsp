@@ -5,6 +5,18 @@
 		<h1 class="form-heading">Crea il tuo Evento</h1>
 		<hr>
 		<div class="row">
+		<spring:bind path="username">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
+					<h5>Creatore</h5>
+					<form:select type="text" path="username" class="form-control"
+						placeholder="username" autofocus="true">
+						<form:option value="${pageContext.request.userPrincipal.name}">${pageContext.request.userPrincipal.name}</form:option>
+					</form:select>
+					<form:errors path="username"></form:errors>
+				</div>
+			</spring:bind>
+			</div>
+		<div class="row">
 			<spring:bind path="title">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>Titolo</h5>
