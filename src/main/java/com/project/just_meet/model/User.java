@@ -8,7 +8,7 @@ import java.util.Set;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 
 	private String username, email, password, name, surname, birthday, sex, city;
 
@@ -17,9 +17,6 @@ public class User {
 
 	@ManyToMany
 	private Set<Role> roles;
-
-	@ManyToMany
-	private Set<Event> events;
 
 	public Long getId() {
 		return id;
@@ -59,14 +56,6 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
-	}
-
-	public Set<Event> getEvents() {
-		return events;
-	}
-
-	public void setEvents(Set<Event> events) {
-		this.events = events;
 	}
 
 	public String getEmail() {

@@ -32,4 +32,14 @@ public class EventServiceImpl implements EventService {
 	public List<Event> findAllByCategory(String category) {
 		return eventRepository.findAllByCategory(category);
 	}
+
+	@Override
+	public List<Event> findAllByUsername(String username) {
+		return  eventRepository.findAllByUsername(username);
+	}
+	
+	@Override
+	public List<Event> findAll(){
+		return eventRepository.findAll();
+	}
 }

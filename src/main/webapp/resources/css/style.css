@@ -7,11 +7,6 @@ body {
 	line-height: 50px;
 }
 
-.carousel-inner>.item {
-	min-height: 600px;
-	background-size: cover;
-	background-position: center center;
-}
 /* Dropdown Button */
 .dropbtn {
 	padding: 16px;
@@ -56,4 +51,8 @@ body {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
 	background-color: #ff0000;
+}
+
+.empty-events {
+	background-color: white;
 }

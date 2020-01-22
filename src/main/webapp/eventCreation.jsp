@@ -122,7 +122,18 @@
 			</spring:bind>
 		</div>
 		<hr>
-		<button type="submit" class="btn btn-primary">Crea</button>
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<button type="submit" class="btn btn-primary col-sm-6">Crea</button>
+			</div>
+			<spring:bind path="username">
+				<div class="form-group col-sm-3  invisible">
+					<form:select type="text" path="username" class="form-control">
+						<form:option value="${pageContext.request.userPrincipal.name}">${pageContext.request.userPrincipal.name}</form:option>
+					</form:select>
+				</div>
+			</spring:bind>
+		</div>
 	</form:form>
 </div>
 <%@include file="common/footer.jspf"%>

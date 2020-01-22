@@ -24,14 +24,14 @@ public class EventValidator implements Validator {
 		Event event = (Event) o;
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "title", "NotEmpty");
-		if (event.getTitle().length() < 6 || event.getTitle().length() > 32)
+		if (event.getTitle().length() < 1 || event.getTitle().length() > 32)
 			errors.rejectValue("title", "Size.eventForm.title");
 
 		if (eventService.findByTitle(event.getTitle()) != null)
 			errors.rejectValue("title", "Duplicate.eventForm.title");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "NotEmpty");
-		if (event.getDescription().length() < 50 || event.getDescription().length() > 200)
+		if (event.getDescription().length() < 10 || event.getDescription().length() > 200)
 			errors.rejectValue("description", "Size.eventForm.description");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "place", "NotEmpty");

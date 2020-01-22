@@ -6,13 +6,13 @@
 	<!-- Copyright -->
 	<div class="footer-copyright text-center py-3">
 		© 2020 Copyright: <a
-			href="https://mdbootstrap.com/education/bootstrap/"> JustMeet</a>
+			href="home"> JustMeet</a>
 	</div>
 	<!-- Copyright -->
 </footer>
 <!-- Footer -->
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

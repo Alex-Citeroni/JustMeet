@@ -6,12 +6,13 @@
 			class="active"></li>
 		<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
 		<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+		<li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
 	</ol>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
 			<img
 				src="https://source.unsplash.com/1600x700/?soccer,basketball,volleyball,tablegame"
-				class="d-block w-100" alt="">
+				class="d-block w-100" alt="First slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Cerca</h5>
 				<p>Cerca tra gli eventi già creati uno che fa al caso tuo.</p>
@@ -19,7 +20,7 @@
 		</div>
 		<div class="carousel-item">
 			<img src="https://source.unsplash.com/1600x700/?boardgame"
-				class="d-block w-100" alt="">
+				class="d-block w-100" alt="Second slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Partecipa</h5>
 				<p>Partecipa ad eventi di altri utenti e fai nuove amicizie!</p>
@@ -27,7 +28,7 @@
 		</div>
 		<div class="carousel-item">
 			<img src="https://source.unsplash.com/1600x700/?study,school,friends"
-				class="d-block w-100" alt="">
+				class="d-block w-100" alt="Third slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Crea</h5>
 				<p>Nessun evento già presente soddisfa ciò che cerchi? Creane
@@ -54,7 +55,6 @@
 		class="sr-only">Avanti</span>
 	</a>
 </div>
-<br>
 <br>
 <div class="container">
 	<h2>Benvenuto in JustMeet
