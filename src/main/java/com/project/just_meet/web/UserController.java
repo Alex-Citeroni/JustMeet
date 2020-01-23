@@ -24,7 +24,7 @@ public class UserController {
 	@GetMapping("/registration")
 	public String registration(Model model) {
 		model.addAttribute("userForm", new User());
-			
+
 		return "registration";
 	}
 
@@ -38,7 +38,7 @@ public class UserController {
 		userService.save(userForm);
 
 		securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-		
+
 		return "redirect:/home";
 	}
 
@@ -59,26 +59,18 @@ public class UserController {
 	}
 
 	@GetMapping("/account")
-	public String account(Model model, String delete, String error, User user) {
-		if (error != null)
-			model.addAttribute("error", "Your username and password is invalid.");
-
-		if (delete != null) {
-			userService.delete(user);
-			model.addAttribute("message", "You have been deleted out successfully.");
-		}
-
+	public String account(Model model) {
+		
 		return "account";
 	}
 
 	@PostMapping("/account")
-	public String account(Model model, User accountForm, String delete) {
-		userService.delete(accountForm);
-		if (delete != null) {
-			userService.delete(accountForm);
-			model.addAttribute("message", "You have been deleted out successfully.");
-		}
+	public String account(@ModelAttribute("accountForm") User accountForm, BindingResult bindingResult) {
+		if (bindingResult.hasErrors())
+			return "account";
+		
+		userService.delete(accountForm.getId());
 
-		return "account";
+		return "redirect:/login";
 	}
 }

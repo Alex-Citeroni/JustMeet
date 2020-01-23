@@ -49,7 +49,7 @@
 			</spring:bind>
 			<spring:bind path="email">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
-					<form:input type="text" path="email" class="form-control"
+					<form:input type="email" path="email" class="form-control"
 						placeholder="E-mail" autofocus="true"></form:input>
 					<form:errors path="email"></form:errors>
 				</div>
@@ -69,13 +69,12 @@
 				</div>
 			</spring:bind>
 		</div>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-		<hr>
-		<h4 class="text-center">
-			<a href="${contextPath}/login"
-				class="btn btn-lg btn-primary" role="button">Do you
-				already have an account?</a>
-		</h4>
+		<div class="text-center">
+			<button class="btn btn-lg btn-primary" type="submit">Submit</button>
+			<hr>
+			<a href="${contextPath}/login" class="btn btn-lg btn-primary"
+				role="button">Do you already have an account?</a>
+		</div>
 	</form:form>
 </div>
 <%@include file="common/footer.jspf"%>
