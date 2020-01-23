@@ -55,6 +55,7 @@ public class EventController {
 		model.addAttribute("giochiList", eventService.findAllByCategory("Giochi"));
 		model.addAttribute("altroList", eventService.findAllByCategory("Altro"));
 		model.addAttribute("allList", eventService.findAll());
+		System.out.println(eventService.findAll());
 		return "/events";
 	}
 

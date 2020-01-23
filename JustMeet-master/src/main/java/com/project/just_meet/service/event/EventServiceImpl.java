@@ -42,4 +42,10 @@ public class EventServiceImpl implements EventService {
 	public List<Event> findAll(){
 		return eventRepository.findAll();
 	}
+
+	@Override
+	public void deleteByUsername(String username) {
+		eventRepository.deleteByUsername(username);
+		
+	}
 }

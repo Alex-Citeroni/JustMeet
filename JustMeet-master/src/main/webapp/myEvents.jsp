@@ -3,9 +3,10 @@
 <div class="container">
 	<h1>I tuoi eventi</h1>
 	<hr>
-	<c:if test="${event == null}">
+	<c:if test="${list.size() == 0}">
 		<p class="text-center py-3 empty-events">Nessun evento</p>
 	</c:if>
+	
 	<div class=" col-md-4">
 		<c:forEach var="event" items="${list}">
 			<div class="card">

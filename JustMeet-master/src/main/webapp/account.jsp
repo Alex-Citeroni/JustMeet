@@ -14,7 +14,7 @@
 			</div>
 			</spring:bind>
 			<button class="btn btn-lg btn-primary btn-block col-sm-6"
-				type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+				type="submit" onclick="return confirm('Il tuo account verrà eliminato definitivamente. Sei sicuro?')">Delete</button>
 		</div>
 	</form:form>
 

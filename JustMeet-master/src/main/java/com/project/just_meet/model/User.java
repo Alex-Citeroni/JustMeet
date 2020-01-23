@@ -7,24 +7,15 @@ import java.util.Set;
 @Table(name = "user")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-
-	private String username, email, password, name, surname, birthday, sex, city;
+	private String username;
+	
+	private String email, password, name, surname, birthday, sex, city;
 
 	@Transient
 	private String passwordConfirm;
 
 	@ManyToMany
 	private Set<Role> roles;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getUsername() {
 		return username;

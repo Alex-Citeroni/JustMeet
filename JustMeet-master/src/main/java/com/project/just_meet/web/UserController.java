@@ -2,6 +2,7 @@ package com.project.just_meet.web;
 
 import com.project.just_meet.model.User;
 import com.project.just_meet.service.SecurityService;
+import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.UserValidator;
 
@@ -23,6 +24,9 @@ public class UserController {
 
 	@Autowired
 	private UserValidator userValidator;
+	
+	@Autowired
+	private EventService eventService;
 	
 
 	@GetMapping("/registration")
@@ -76,6 +80,7 @@ public class UserController {
 			return "account";
 		
 		System.out.println(username);
+		eventService.deleteByUsername(username);
 		userService.deleteByUsername(username);
 
 		return "redirect:/login";
