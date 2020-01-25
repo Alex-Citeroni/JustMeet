@@ -17,4 +17,8 @@ public interface EventService {
 	List<Event> findAll();
 
 	void deleteByUsername(String username);
+	
+	void deleteById(long id);
+	
+	Event findById(long id);
 }

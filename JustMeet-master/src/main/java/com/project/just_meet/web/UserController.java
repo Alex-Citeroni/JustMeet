@@ -79,7 +79,6 @@ public class UserController {
 		if (bindingResult.hasErrors())
 			return "account";
 		
-		System.out.println(username);
 		eventService.deleteByUsername(username);
 		userService.deleteByUsername(username);
 
