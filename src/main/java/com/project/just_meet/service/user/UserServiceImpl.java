@@ -24,10 +24,10 @@ public class UserServiceImpl implements UserService {
 		user.setRoles(new HashSet<>(roleRepository.findAll()));
 		userRepository.save(user);
 	}
-	
+
 	@Override
-	public void delete(long id) {
-		userRepository.deleteById(id);
+	public void deleteByUsername(String username) {
+		userRepository.deleteByUsername(username);
 	}
 
 	@Override

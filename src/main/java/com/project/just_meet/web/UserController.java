@@ -2,8 +2,12 @@ package com.project.just_meet.web;
 
 import com.project.just_meet.model.User;
 import com.project.just_meet.service.SecurityService;
+import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.UserValidator;
+
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +24,9 @@ public class UserController {
 
 	@Autowired
 	private UserValidator userValidator;
+
+	@Autowired
+	private EventService eventService;
 
 	@GetMapping("/registration")
 	public String registration(Model model) {
@@ -60,16 +67,20 @@ public class UserController {
 
 	@GetMapping("/account")
 	public String account(Model model) {
-		
+		model.addAttribute("username", new User());
+
 		return "account";
 	}
 
+	@Transactional
 	@PostMapping("/account")
-	public String account(@ModelAttribute("accountForm") User accountForm, BindingResult bindingResult) {
+	public String account(@ModelAttribute("username") String username, BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
 			return "account";
-		
-		userService.delete(accountForm.getId());
+
+		eventService.deleteByUsername(username);
+
+		userService.deleteByUsername(username);
 
 		return "redirect:/login";
 	}

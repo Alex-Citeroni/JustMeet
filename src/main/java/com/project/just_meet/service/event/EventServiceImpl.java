@@ -35,11 +35,26 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<Event> findAllByUsername(String username) {
-		return  eventRepository.findAllByUsername(username);
+		return eventRepository.findAllByUsername(username);
 	}
-	
+
 	@Override
-	public List<Event> findAll(){
+	public List<Event> findAll() {
 		return eventRepository.findAll();
+	}
+
+	@Override
+	public void deleteByUsername(String username) {
+		eventRepository.deleteByUsername(username);
+	}
+
+	@Override
+	public void deleteById(long id) {
+		eventRepository.deleteById(id);
+	}
+
+	@Override
+	public Event findById(long id) {
+		return eventRepository.findById(id);
 	}
 }

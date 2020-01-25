@@ -40,7 +40,7 @@
 							<div class="dropdown-divider"></div>
 							<a href="events">Cerca Evento</a>
 							<div class="dropdown-divider"></div>
-							<a href="eventCreation">Crea Evento</a>
+							<a href="eventCreation">Nuovo Evento</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link"
 						onclick="document.forms['logoutForm'].submit()">Logout</a></li>

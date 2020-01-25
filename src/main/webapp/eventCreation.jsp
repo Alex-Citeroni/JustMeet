@@ -2,7 +2,7 @@
 <div class="container">
 	<form:form method="POST" modelAttribute="eventForm">
 		<hr>
-		<h1 class="form-heading">Crea il tuo Evento</h1>
+		<h1 class="form-heading">Crea un nuovo Evento</h1>
 		<hr>
 		<div class="row">
 			<spring:bind path="title">

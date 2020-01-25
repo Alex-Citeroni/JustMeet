@@ -23,12 +23,11 @@
 	<div class="tab-content" id="myTabContent">
 		<div class="tab-pane fade show active" id="Tutto" role="tabpanel"
 			aria-labelledby="home-tab">
-			<c:if test="${event == null}" var="event" scope="session">
-				<p class="text-center py-3 empty-events">Nessun evento</p>
+			<c:if test="${allList.size() == 0}" var="event" scope="session">
+				<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${allList}">
-					<c:set var="event" scope="session" value="evento" />
 					<div class="card">
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
@@ -42,8 +41,8 @@
 		</div>
 		<div class="tab-pane fade" id="Sport" role="tabpanel"
 			aria-labelledby="sport-tab">
-			<c:if test="${event == null}">
-				<p class="text-center py-3 empty-events">Nessun evento</p>
+			<c:if test="${sportList.size() == 0}">
+				<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${sportList}">
@@ -60,8 +59,8 @@
 		</div>
 		<div class="tab-pane fade" id="Istruzione" role="tabpanel"
 			aria-labelledby="istruzione-tab">
-			<c:if test="${event == null}">
-				<p class="text-center py-3 empty-events">Nessun evento</p>
+			<c:if test="${istrList.size() == 0}">
+				<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${istrList}">
@@ -78,8 +77,8 @@
 		</div>
 		<div class="tab-pane fade" id="Giochi" role="tabpanel"
 			aria-labelledby="giochi-tab">
-			<c:if test="${event == null}">
-				<p class="text-center py-3 empty-events">Nessun evento</p>
+			<c:if test="${giochiList.size() == 0}">
+				<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${giochiList}">
@@ -96,8 +95,8 @@
 		</div>
 		<div class="tab-pane fade" id="Altro" role="tabpanel"
 			aria-labelledby="Altro...-tab">
-			<c:if test="${event == null}">
-				<p class="text-center py-3 empty-events">Nessun evento</p>
+			<c:if test="${altroList.size() == 0}">
+				<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${altroList}">

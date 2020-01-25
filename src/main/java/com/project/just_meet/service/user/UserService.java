@@ -4,8 +4,8 @@ import com.project.just_meet.model.User;
 
 public interface UserService {
 	void save(User user);
-	
-	void delete(long id);
+
+	void deleteByUsername(String username);
 
 	User findByUsername(String username);
 }

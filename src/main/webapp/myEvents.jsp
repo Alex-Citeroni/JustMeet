@@ -1,10 +1,17 @@
 <%@include file="common/header.jspf"%>
 <br>
 <div class="container">
-	<h1>I tuoi eventi</h1>
+	<div class="row">
+		<h1>I tuoi eventi</h1>
+		<hr>
+		<div>
+			<a href="eventCreation" class="btn btn-lg btn-primary btn-block">Nuovo
+				evento</a>
+		</div>
+	</div>
 	<hr>
-	<c:if test="${event == null}">
-		<p class="text-center py-3 empty-events">Nessun evento</p>
+	<c:if test="${list.size() == 0}">
+		<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 	</c:if>
 	<div class=" col-md-4">
 		<c:forEach var="event" items="${list}">
@@ -13,7 +20,7 @@
 				<div class="card-body">
 					<h4 class="card-title">${event.title}</h4>
 					<p class="card-text">${event.description}</p>
-					<a href="event" class="btn btn-primary">Go</a>
+					<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
 				</div>
 			</div>
 		</c:forEach>

@@ -4,6 +4,8 @@ import com.project.just_meet.model.Event;
 import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.validator.EventValidator;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,17 +39,6 @@ public class EventController {
 		return "redirect:/myEvents?username=" + eventForm.getUsername();
 	}
 
-	@GetMapping("/event")
-	public String event(Model model, String error, String delete) {
-		if (error != null)
-			model.addAttribute("error", "There was an error creating the event");
-
-		if (delete != null)
-			model.addAttribute("message", "You have been deleted event successfully");
-
-		return "event";
-	}
-
 	@GetMapping("/events")
 	public String eventsList(Model model) {
 		model.addAttribute("sportList", eventService.findAllByCategory("Sport"));
@@ -55,13 +46,36 @@ public class EventController {
 		model.addAttribute("giochiList", eventService.findAllByCategory("Giochi"));
 		model.addAttribute("altroList", eventService.findAllByCategory("Altro"));
 		model.addAttribute("allList", eventService.findAll());
+
 		return "/events";
 	}
 
 	@GetMapping("/myEvents")
-	public String getUserDetails(Model model, @RequestParam String username) {
+	public String findMyEvents(Model model, @RequestParam String username) {
 		model.addAttribute("list", eventService.findAllByUsername(username));
 
 		return "/myEvents";
+	}
+
+	@GetMapping("/event")
+	public String getEvent(Model model, @RequestParam long id) {
+		model.addAttribute("id", new Event());
+
+		model.addAttribute("event", eventService.findById(id));
+
+		return "event";
+	}
+
+	@Transactional
+	@PostMapping("/event")
+	public String deleteEvent(@ModelAttribute("id") long id, BindingResult bindingResult) {
+		if (bindingResult.hasErrors())
+			return "event";
+
+		Event event = eventService.findById(id);
+
+		eventService.deleteById(id);
+
+		return "redirect:/myEvents?username=" + event.getUsername();
 	}
 }
