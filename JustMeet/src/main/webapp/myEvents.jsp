@@ -21,7 +21,7 @@
 					<div class="card-body">
 						<h4 class="card-title">${event.title}</h4>
 						<p class="card-text">${event.description}</p>
-						<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
+						<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 
 						<spring:bind path="id">
 							<div class="form-group col-sm-3  invisible">
@@ -32,7 +32,7 @@
 						</spring:bind>
 
 						<div class="text-center col-sm-12">
-							<button type="submit" class="btn btn-primary col-sm-6">Delete</button>
+							<button type="submit" class="btn btn-primary col-sm-6">Elimina evento</button>
 						</div>
 					</div>
 				</div>

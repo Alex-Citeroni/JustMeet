@@ -42,10 +42,6 @@ public class EventValidator implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "province", "NotEmpty");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
-		if (event.getParticipants() <= 1)
-			errors.rejectValue("participants", "Size.eventForm.participants");
-
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "NotEmpty");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "date", "NotEmpty");

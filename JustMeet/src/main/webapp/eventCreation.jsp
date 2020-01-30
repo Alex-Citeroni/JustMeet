@@ -14,7 +14,6 @@
 				</div>
 			</spring:bind>
 		</div>
-		<hr>
 		<div class="row">
 			<spring:bind path="description">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
@@ -40,16 +39,18 @@
 					<form:errors path="category"></form:errors>
 				</div>
 			</spring:bind>
-			<spring:bind path="participants">
-				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
-					<h5>Numero partecipanti</h5>
-					<form:input type="number" path="participants" class="form-control"
-						placeholder="Participants" autofocus="true"></form:input>
-					<form:errors path="participants"></form:errors>
-				</div>
-			</spring:bind>
 		</div>
 		<hr>
+		<div class="row">
+		<spring:bind path="place">
+			<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
+				<h5>Nome luogo</h5>
+				<form:input type="text" path="place" class="form-control"
+					placeholder="Place" autofocus="true"></form:input>
+				<form:errors path="place"></form:errors>
+			</div>
+		</spring:bind>
+		</div>
 		<div class="row">
 			<spring:bind path="city">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
@@ -60,7 +61,7 @@
 				</div>
 			</spring:bind>
 			<spring:bind path="province">
-				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-2">
 					<h5>Provincia</h5>
 					<form:input type="text" path="province" class="form-control"
 						placeholder="Province" autofocus="true"></form:input>
@@ -68,7 +69,7 @@
 				</div>
 			</spring:bind>
 			<spring:bind path="address">
-				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-5">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-4">
 					<h5>Via</h5>
 					<form:input type="text" path="address" class="form-control"
 						placeholder="Address" autofocus="true"></form:input>
@@ -78,14 +79,6 @@
 		</div>
 		<hr>
 		<div class="row">
-			<spring:bind path="place">
-				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-4">
-					<h5>Nome luogo</h5>
-					<form:input type="text" path="place" class="form-control"
-						placeholder="Place" autofocus="true"></form:input>
-					<form:errors path="place"></form:errors>
-				</div>
-			</spring:bind>
 			<spring:bind path="date">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Data</h5>
@@ -114,7 +107,7 @@
 			</spring:bind>
 			<spring:bind path="image">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
-					<h5>Inserisci una copertina</h5>
+					<h5>Aggiungi un'immagine rappresentativa</h5>
 					<form:input type="file" path="image" class="form-control-file"
 						id="FormFile" placeholder="Image" autofocus="true"></form:input>
 					<form:errors path="image"></form:errors>

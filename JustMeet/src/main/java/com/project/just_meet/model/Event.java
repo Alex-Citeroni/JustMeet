@@ -13,7 +13,7 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	private int cost, participants;
+	private int cost;
 
 	private File image;
 
@@ -44,14 +44,6 @@ public class Event {
 
 	public void setCost(int cost) {
 		this.cost = cost;
-	}
-
-	public int getParticipants() {
-		return participants;
-	}
-
-	public void setParticipants(int participants) {
-		this.participants = participants;
 	}
 
 	public String getPlace() {

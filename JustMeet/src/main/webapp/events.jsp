@@ -32,9 +32,13 @@
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-						<p class="card-text">${event.username}</p>
-							<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -51,9 +55,13 @@
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<p class="card-text">${event.username}</p>
-							<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -70,9 +78,13 @@
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<p class="card-text">${event.username}</p>
-							<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -89,9 +101,13 @@
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<p class="card-text">${event.username}</p>
-							<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -108,15 +124,19 @@
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<p class="card-text">${event.username}</p>
-							<a href="event?id=${event.id}" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-	
+
 </div>
 <%@include file="common/footer.jspf"%>

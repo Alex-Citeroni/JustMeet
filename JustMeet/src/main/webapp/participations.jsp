@@ -6,7 +6,7 @@
 		<hr>
 	</div>
 	<hr>
-	<c:if test="${list.size() == 0}">
+	<c:if test="${participations.size() == 0}">
 		<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 	</c:if>
 	<div class=" col-md-4">
