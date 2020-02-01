@@ -1,11 +1,12 @@
 package com.project.just_meet.web;
 
 import com.project.just_meet.model.Event;
+import com.project.just_meet.model.User;
 import com.project.just_meet.service.event.EventService;
+import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.EventValidator;
-
+import java.security.Principal;
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class EventController {
 	private EventService eventService;
 
 	@Autowired
+	private UserService userService;
+
+	@Autowired
 	private EventValidator eventValidator;
 
 	@GetMapping("/eventCreation")
@@ -28,15 +32,19 @@ public class EventController {
 	}
 
 	@PostMapping("/eventCreation")
-	public String eventCreation(@ModelAttribute("eventForm") Event eventForm, BindingResult bindingResult) {
+	public String eventCreation(@ModelAttribute("eventForm") Event eventForm, Principal user,
+			BindingResult bindingResult) {
 		eventValidator.validate(eventForm, bindingResult);
 
 		if (bindingResult.hasErrors())
 			return "eventCreation";
 
+		User u = userService.findByUsername(user.getName());
+		eventForm.getUsers().add(u);
+		u.getEvents().add(eventForm);
 		eventService.save(eventForm);
 
-		return "redirect:/myEvents?username=" + eventForm.getUsername();
+		return "redirect:/myEvents";
 	}
 
 	@GetMapping("/events")
@@ -51,31 +59,45 @@ public class EventController {
 	}
 
 	@GetMapping("/myEvents")
-	public String findMyEvents(Model model, @RequestParam String username) {
-		model.addAttribute("list", eventService.findAllByUsername(username));
+	public String myEvents(Model model, Principal user) {
+		model.addAttribute("list", eventService.findAllByUsername(user.getName()));
+		model.addAttribute("id", new Event());
+
+		return "/myEvents";
+	}
+
+	@Transactional
+	@PostMapping("/myEvents")
+	public String deleteEvent(@ModelAttribute("id") long id) {
+		eventService.deleteById(id);
 
 		return "/myEvents";
 	}
 
 	@GetMapping("/event")
 	public String getEvent(Model model, @RequestParam long id) {
-		model.addAttribute("id", new Event());
-
 		model.addAttribute("event", eventService.findById(id));
+		model.addAttribute("id", new Event());
 
 		return "event";
 	}
 
-	@Transactional
 	@PostMapping("/event")
-	public String deleteEvent(@ModelAttribute("id") long id, BindingResult bindingResult) {
-		if (bindingResult.hasErrors())
-			return "event";
+	public String addParticipation(@ModelAttribute("id") long id, Principal user) {
+		User u = userService.findByUsername(user.getName());
+		Event e = eventService.findById(id);
+		e.getUsers().add(u);
+		u.getEvents().add(e);
+		eventService.save(e);
+		userService.save(u);
 
-		Event event = eventService.findById(id);
+		return "redirect:/events";
+	}
 
-		eventService.deleteById(id);
+	@GetMapping("participations")
+	public String partecipations(Model model, Principal user) {
+		model.addAttribute("participations", userService.findByUsername(user.getName()).getEvents());
 
-		return "redirect:/myEvents?username=" + event.getUsername();
+		return "/participations";
 	}
 }

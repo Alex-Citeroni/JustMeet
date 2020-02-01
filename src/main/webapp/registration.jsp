@@ -17,7 +17,7 @@
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>Name</h5>
 					<form:input type="text" path="name" class="form-control"
-						placeholder="Name" autofocus="true"></form:input>
+						placeholder="Name"></form:input>
 					<form:errors path="name"></form:errors>
 				</div>
 			</spring:bind>
@@ -25,7 +25,7 @@
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>Surname</h5>
 					<form:input type="text" path="surname" class="form-control"
-						placeholder="Surname" autofocus="true"></form:input>
+						placeholder="Surname"></form:input>
 					<form:errors path="surname"></form:errors>
 				</div>
 			</spring:bind>
@@ -44,7 +44,7 @@
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>Birthday</h5>
 					<form:input type="date" path="birthday" class="form-control"
-						placeholder="Birthday" autofocus="true"></form:input>
+						placeholder="Birthday"></form:input>
 					<form:errors path="birthday"></form:errors>
 				</div>
 			</spring:bind>
@@ -52,7 +52,7 @@
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>City</h5>
 					<form:input type="text" path="city" class="form-control"
-						placeholder="City" autofocus="true"></form:input>
+						placeholder="City"></form:input>
 					<form:errors path="city"></form:errors>
 				</div>
 			</spring:bind>
@@ -60,7 +60,7 @@
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-6">
 					<h5>Email</h5>
 					<form:input type="email" path="email" class="form-control"
-						placeholder="E-mail" autofocus="true"></form:input>
+						placeholder="E-mail"></form:input>
 					<form:errors path="email"></form:errors>
 				</div>
 			</spring:bind>

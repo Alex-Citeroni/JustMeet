@@ -5,9 +5,7 @@ import com.project.just_meet.service.SecurityService;
 import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.UserValidator;
-
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

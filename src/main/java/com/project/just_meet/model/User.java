@@ -1,6 +1,7 @@
 package com.project.just_meet.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,6 +17,9 @@ public class User {
 
 	@ManyToMany
 	private Set<Role> roles;
+
+	@ManyToMany
+	private Set<Event> events = new HashSet<Event>();
 
 	public String getUsername() {
 		return username;
@@ -47,6 +51,14 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Set<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(Set<Event> events) {
+		this.events = events;
 	}
 
 	public String getEmail() {

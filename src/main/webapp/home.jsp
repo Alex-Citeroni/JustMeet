@@ -76,7 +76,7 @@
 			<p>Hai voglia di una partita a basket o semplicemente dei
 				compagni di studio ma non sai a chi chiedere? Cerca tra gli eventi
 				già creati se ce n'è qualcuno al caso tuo!</p>
-			<a href="events.jsp" class="btn btn-info" role="button">Partecipa</a>
+			<a href="events" class="btn btn-info" role="button">Partecipa</a>
 		</div>
 	</div>
 </div>

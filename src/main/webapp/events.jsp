@@ -28,12 +28,18 @@
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${allList}">
+					<br>
 					<div class="card">
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<a href="event" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -46,12 +52,18 @@
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${sportList}">
+					<br>
 					<div class="card">
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<a href="event" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -64,12 +76,18 @@
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${istrList}">
+					<br>
 					<div class="card">
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<a href="event" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -82,12 +100,18 @@
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${giochiList}">
+					<br>
 					<div class="card">
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<a href="event" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -100,12 +124,18 @@
 			</c:if>
 			<div class=" col-md-4">
 				<c:forEach var="event" items="${altroList}">
+					<br>
 					<div class="card">
 						<img class="card-img-top img-fluid" src="${event.image}" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
-							<p class="card-text">${event.description}</p>
-							<a href="event" class="btn btn-primary">Go</a>
+							<p class="card-text">
+								<b>Data:</b> ${event.date}
+							</p>
+							<p class="card-text">
+								<b>Organizzatore:</b> ${event.username}
+							</p>
+							<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
 						</div>
 					</div>
 				</c:forEach>

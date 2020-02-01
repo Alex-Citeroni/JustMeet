@@ -2,7 +2,6 @@ package com.project.just_meet.validator;
 
 import com.project.just_meet.model.Event;
 import com.project.just_meet.service.event.EventService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -42,15 +41,15 @@ public class EventValidator implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "province", "NotEmpty");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
-		if (event.getParticipants() <= 1)
-			errors.rejectValue("participants", "Size.eventForm.participants");
-
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "NotEmpty");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "date", "NotEmpty");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "time", "NotEmpty");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "startingTime", "NotEmpty");
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endTime", "NotEmpty");
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
 
 		if (event.getImage().length() > 1000)
 			errors.rejectValue("image", "Size.eventForm.image");

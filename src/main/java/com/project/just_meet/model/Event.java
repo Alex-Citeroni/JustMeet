@@ -1,7 +1,8 @@
 package com.project.just_meet.model;
 
 import java.io.File;
-
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 
 @Entity
@@ -11,11 +12,15 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	private int cost, participants;
+	private int cost;
 
 	private File image;
 
-	private String title, place, address, province, description, category, date, city, time, username;
+	private String title, place, address, province, description, category, date, city, startingTime, username, endTime,
+			participants;
+
+	@ManyToMany
+	private Set<User> users = new HashSet<User>();
 
 	public Long getId() {
 		return id;
@@ -39,14 +44,6 @@ public class Event {
 
 	public void setCost(int cost) {
 		this.cost = cost;
-	}
-
-	public int getParticipants() {
-		return participants;
-	}
-
-	public void setParticipants(int participants) {
-		this.participants = participants;
 	}
 
 	public String getPlace() {
@@ -113,19 +110,43 @@ public class Event {
 		this.image = image;
 	}
 
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-
 	public String getUsername() {
 		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartingTime() {
+		return startingTime;
+	}
+
+	public void setStartingTime(String startingTime) {
+		this.startingTime = startingTime;
+	}
+
+	public String getParticipants() {
+		return participants;
+	}
+
+	public void setParticipants(String participants) {
+		this.participants = participants;
 	}
 }
