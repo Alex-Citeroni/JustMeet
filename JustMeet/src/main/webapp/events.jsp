@@ -6,19 +6,19 @@
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
 		<li class="nav-item"><a class="nav-link active" id="home-tab"
 			data-toggle="tab" href="#Tutto" role="tab" aria-controls="home"
-			aria-selected="true">Tutto</a></li>
+			aria-selected="true"><i class="fas fa-list"></i> Tutto</a></li>
 		<li class="nav-item"><a class="nav-link" id="home-tab"
 			data-toggle="tab" href="#Sport" role="tab" aria-controls="contact"
-			aria-selected="true">Sport</a></li>
+			aria-selected="true"><i class="fas fa-futbol"></i> Sport</a></li>
 		<li class="nav-item"><a class="nav-link" id="profile-tab"
 			data-toggle="tab" href="#Istruzione" role="tab"
-			aria-controls="profile" aria-selected="false">Istruzione</a></li>
+			aria-controls="profile" aria-selected="false"><i class="fas fa-book"></i> Istruzione</a></li>
 		<li class="nav-item"><a class="nav-link" id="contact-tab"
 			data-toggle="tab" href="#Giochi" role="tab" aria-controls="contact"
-			aria-selected="false">Giochi</a></li>
+			aria-selected="false"><i class="fas fa-chess-pawn"></i> Giochi</a></li>
 		<li class="nav-item"><a class="nav-link" id="contact-tab"
 			data-toggle="tab" href="#Altro" role="tab" aria-controls="contact"
-			aria-selected="false">Altro...</a></li>
+			aria-selected="false"><i class="far fa-lightbulb"></i> Altro...</a></li>
 	</ul>
 	<div class="tab-content" id="myTabContent">
 		<div class="tab-pane fade show active" id="Tutto" role="tabpanel"

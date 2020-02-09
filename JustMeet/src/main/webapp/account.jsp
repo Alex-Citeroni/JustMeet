@@ -2,21 +2,25 @@
 <hr>
 <div class="container">
 	<form:form method="POST" modelAttribute="username">
-		<h1 class="form-heading">${pageContext.request.userPrincipal.name}</h1>
+		<h1 class="form-heading">${user.username}</h1>
 		<hr>
-		<div class="col-md-6">
-			<h4>Cancella account</h4>
-			<spring:bind path="username">
-				<div class="form-group col-sm-3  invisible">
-					<form:select type="text" path="username" class="form-control">
-						<form:option value="${pageContext.request.userPrincipal.name}">${pageContext.request.userPrincipal.name}</form:option>
-					</form:select>
-				</div>
-			</spring:bind>
-			<button class="btn btn-lg btn-primary btn-block col-sm-6"
-				type="submit"
-				onclick="return confirm('Il tuo account verrà eliminato definitivamente. Sei sicuro?')">Delete</button>
+		<h4>Dati utente:</h4>
+		<div class="shadow-sm p-3 mb-5 bg-white rounded">
+			${user.name} ${user.surname} <br> ${user.birthday} <br>
+			${user.sex} <br> ${user.city}
 		</div>
+		<button class="btn btn-lg btn-danger btn-block col-sm-3" type="submit"
+			onclick="return confirm('Il tuo account sarà eliminato definitivamente. Sei sicuro?')">
+			Elimina account <i class="fas fa-trash-alt"></i>
+		</button>
+		<spring:bind path="username">
+			<div class="form-group col-sm-3  invisible">
+				<form:select type="text" path="username" class="form-control">
+					<form:option value="${user.username}"></form:option>
+				</form:select>
+			</div>
+		</spring:bind>
+
 	</form:form>
 </div>
 <%@include file="common/footer.jspf"%>

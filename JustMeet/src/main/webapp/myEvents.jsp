@@ -5,8 +5,7 @@
 		<h1>I tuoi eventi</h1>
 		<hr>
 		<div>
-			<a href="eventCreation" class="btn btn-lg btn-primary btn-block">Nuovo
-				evento</a>
+			<a href="eventCreation" class="btn btn-lg btn-light btn-block">Nuovo evento <i class="fas fa-plus"></i></a>
 		</div>
 	</div>
 	<hr>
@@ -31,9 +30,11 @@
 							</div>
 						</spring:bind>
 
-						<div class="text-center col-sm-12">
-							<button type="submit" class="btn btn-primary col-sm-6">Elimina evento</button>
-						</div>
+						<button type="submit" class="btn btn-danger col-sm-"
+							onclick="return confirm('Il tuo evento sarà eliminato definitivamente. Sei sicuro?')">
+							<i class="fas fa-trash-alt"></i>
+						</button>
+
 					</div>
 				</div>
 			</c:forEach>

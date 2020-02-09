@@ -20,9 +20,10 @@
 		<h4>Info:</h4>
 		<div class="shadow-sm p-3 mb-5 bg-white rounded">
 			<b>n° partecipanti:</b> ${event.users.size()}
+
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary " data-toggle="modal"
-				data-target="#participantsView">Vedi partecipanti</button>
+			<button type="button" class="btn btn-warning " data-toggle="modal"
+				data-target="#participantsView">Partecipanti</button>
 
 			<!-- Modal -->
 			<div class="modal fade" id="participantsView" tabindex="-1"
@@ -48,19 +49,17 @@
 			</div>
 			<br> <b>Costo:</b> ${event.cost}
 		</div>
+		<form:form method="POST" modelAttribute="id">
+			<spring:bind path="id">
+				<button type="submit" class="btn btn-success col-sm-3">Partecipa</button>
+				<div class="form-group  invisible">
+					<form:select type="text" path="id" class="form-control">
+						<form:option value="${event.id}">${event.id}</form:option>
+					</form:select>
+				</div>
+			</spring:bind>
+		</form:form>
 	</div>
-	<form:form method="POST" modelAttribute="id">
-		<spring:bind path="id">
-			<div class="form-group  invisible">
-				<form:select type="text" path="id" class="form-control">
-					<form:option value="${event.id}">${event.id}</form:option>
-				</form:select>
-			</div>
-			<div class="text-center col-sm-12">
-				<button type="submit" class="btn btn-primary col-sm-6">Partecipa</button>
-			</div>
-		</spring:bind>
-	</form:form>
 </div>
 
 <%@include file="common/footer.jspf"%>

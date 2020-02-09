@@ -26,6 +26,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void update(User user) {
+		userRepository.save(user);
+	}
+
+
+	@Override
 	public void deleteByUsername(String username) {
 		userRepository.deleteByUsername(username);
 	}
@@ -34,6 +40,7 @@ public class UserServiceImpl implements UserService {
 	public User findByUsername(String username) {
 		return userRepository.findByUsername(username);
 	}
+
 
 
 }

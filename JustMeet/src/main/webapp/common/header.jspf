@@ -12,6 +12,7 @@
 	href="${contextPath}/resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="${contextPath}/resources/css/style.css">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d3f031d369.js" crossorigin="anonymous"></script>
 </head>
 <header>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -39,7 +40,7 @@
 							<div class="dropdown-divider"></div>
 							<a href="participations">A cui partecipi</a>
 							<div class="dropdown-divider"></div>
-							<a href="account">Profilo</a>
+							<a href="account">Account</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="dropdown07XL"
