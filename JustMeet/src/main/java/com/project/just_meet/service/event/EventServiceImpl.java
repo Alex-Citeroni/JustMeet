@@ -23,6 +23,7 @@ public class EventServiceImpl implements EventService {
 		eventRepository.delete(event);
 	}
 
+	
 	@Override
 	public Event findByTitle(String title) {
 		return eventRepository.findByTitle(title);
@@ -57,6 +58,8 @@ public class EventServiceImpl implements EventService {
 	public Event findById(long id) {
 		return eventRepository.findById(id);
 	}
+
+
 
 
 	

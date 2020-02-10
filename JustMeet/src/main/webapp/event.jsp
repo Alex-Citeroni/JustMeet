@@ -23,7 +23,7 @@
 
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-warning " data-toggle="modal"
-				data-target="#participantsView">Partecipanti</button>
+				data-target="#participantsView"><i class="fas fa-user-check"></i></button>
 
 			<!-- Modal -->
 			<div class="modal fade" id="participantsView" tabindex="-1"
@@ -51,7 +51,7 @@
 		</div>
 		<form:form method="POST" modelAttribute="id">
 			<spring:bind path="id">
-				<button type="submit" class="btn btn-success col-sm-3">Partecipa</button>
+				<button type="submit" class="btn btn-success col-sm-3">Partecipa <i class="fas fa-check-circle"></i></button>
 				<div class="form-group  invisible">
 					<form:select type="text" path="id" class="form-control">
 						<form:option value="${event.id}">${event.id}</form:option>

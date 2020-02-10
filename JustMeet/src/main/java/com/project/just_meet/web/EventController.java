@@ -88,6 +88,21 @@ public class EventController {
 		return "/myEvents";
 	}
 	
+	@GetMapping("/updateEvent")
+	public String updateEvent(Model model, @RequestParam long id) {
+		model.addAttribute("event", eventService.findById(id));
+		
+		return "/updateEvent";
+	}
+	
+	@PostMapping("/updateEvent")
+	public String updateEvent(@ModelAttribute("event") Event event) {
+		
+		eventService.save(event);
+		
+		return "redirect:/event?id="+event.getId();
+	}
+	
 	@GetMapping("/event")
 	public String getEvent(Model model, @RequestParam long id) {
 		model.addAttribute("event", eventService.findById(id));
@@ -124,5 +139,7 @@ public class EventController {
 		model.addAttribute("participations", events);
 		return "/participations";
 	}
+	
+	
 	
 }

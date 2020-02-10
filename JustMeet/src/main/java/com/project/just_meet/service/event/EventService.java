@@ -5,7 +5,6 @@ import com.project.just_meet.model.Event;
 
 public interface EventService {
 	void save(Event event);
-	
 
 	void delete(Event event);
 
