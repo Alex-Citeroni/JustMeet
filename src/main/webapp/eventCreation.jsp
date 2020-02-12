@@ -30,7 +30,7 @@
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Categoria</h5>
 					<form:select type="text" path="category" class="form-control">
-						<form:option value="Scegli una categoria"></form:option>
+						<form:option value="">Scegli una categoria</form:option>
 						<form:option value="Sport"></form:option>
 						<form:option value="Giochi"></form:option>
 						<form:option value="Istruzione"></form:option>
@@ -48,10 +48,11 @@
 				</div>
 			</spring:bind>
 			<spring:bind path="participants">
-				<div class="form-group col-sm-3">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Numero dei partecipanti</h5>
 					<form:input type="number" path="participants" class="form-control"
 						placeholder="Participants"></form:input>
+					<form:errors path="participants"></form:errors>
 				</div>
 			</spring:bind>
 		</div>
@@ -92,15 +93,17 @@
 				</div>
 			</spring:bind>
 			<spring:bind path="startingTime">
-				<div class="form-group col-sm-3">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Ora d'inizio</h5>
 					<form:input type="time" path="startingTime" class="form-control"></form:input>
+					<form:errors path="startingTime"></form:errors>
 				</div>
 			</spring:bind>
 			<spring:bind path="endTime">
-				<div class="form-group col-sm-3">
+				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Ora di fine evento</h5>
 					<form:input type="time" path="endTime" class="form-control"></form:input>
+					<form:errors path="endTime"></form:errors>
 				</div>
 			</spring:bind>
 		</div>
