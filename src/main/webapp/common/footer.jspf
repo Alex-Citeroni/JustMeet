@@ -5,12 +5,12 @@
 <footer class="page-footer font-small black">
 	<!-- Copyright -->
 	<div class="footer-copyright text-center py-3">
-		© 2020 Copyright: <a
-			href="home"> JustMeet</a>
+		© 2020 Copyright: <a href="home"> JustMeet</a>
 	</div>
 	<!-- Copyright -->
 </footer>
 <!-- Footer -->
+<script src="https://kit.fontawesome.com/d3f031d369.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>

@@ -1,10 +1,12 @@
 package com.project.just_meet.web;
 
+import com.project.just_meet.model.Event;
 import com.project.just_meet.model.User;
 import com.project.just_meet.service.SecurityService;
 import com.project.just_meet.service.event.EventService;
 import com.project.just_meet.service.user.UserService;
 import com.project.just_meet.validator.UserValidator;
+import java.security.Principal;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,7 +66,8 @@ public class UserController {
 	}
 
 	@GetMapping("/account")
-	public String account(Model model) {
+	public String account(Model model, Principal user) {
+		model.addAttribute("user", userService.findByUsername(user.getName()));
 		model.addAttribute("username", new User());
 
 		return "account";
@@ -72,14 +75,35 @@ public class UserController {
 
 	@Transactional
 	@PostMapping("/account")
-	public String account(@ModelAttribute("username") String username, BindingResult bindingResult) {
+	public String deleteAccount(@ModelAttribute("username") String username, BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
 			return "account";
+
+		User user = userService.findByUsername(username);
+
+		for (Event event : user.getEvents()) {
+			event.getUsers().remove(user);
+			eventService.save(event);
+		}
 
 		eventService.deleteByUsername(username);
 
 		userService.deleteByUsername(username);
 
 		return "redirect:/login";
+	}
+
+	@GetMapping("/updateUser")
+	public String updateUser(Model model, @RequestParam String username) {
+		model.addAttribute("user", userService.findByUsername(username));
+
+		return "/updateUser";
+	}
+
+	@PostMapping("/updateUser")
+	public String updateUser(@ModelAttribute("user") User user) {
+		userService.save(user);
+
+		return "redirect:/user?username=" + user.getUsername();
 	}
 }

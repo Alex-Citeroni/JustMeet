@@ -12,7 +12,7 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	private int cost;
+	private double cost;
 
 	private File image;
 
@@ -38,11 +38,11 @@ public class Event {
 		this.date = date;
 	}
 
-	public int getCost() {
+	public double getCost() {
 		return cost;
 	}
 
-	public void setCost(int cost) {
+	public void setCost(double cost) {
 		this.cost = cost;
 	}
 

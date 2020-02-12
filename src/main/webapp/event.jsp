@@ -56,7 +56,7 @@
 				</div>
 			</div>
 			<hr>
-			<h5>Costo: $ ${event.cost}</h5>
+			<h5>Costo: &euro; ${event.cost}</h5>
 		</div>
 	</div>
 	<form:form method="POST" modelAttribute="id">

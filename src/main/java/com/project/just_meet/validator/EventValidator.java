@@ -33,6 +33,10 @@ public class EventValidator implements Validator {
 		if (event.getDescription().length() < 10 || event.getDescription().length() > 200)
 			errors.rejectValue("description", "Size.eventForm.description");
 
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
+		if (event.getParticipants().length() < 2)
+			errors.rejectValue("participants", "Size.eventForm.participants");
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "place", "NotEmpty");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address", "NotEmpty");
@@ -46,12 +50,7 @@ public class EventValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "date", "NotEmpty");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "startingTime", "NotEmpty");
-		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endTime", "NotEmpty");
-		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
 
-		if (event.getImage().length() > 1000)
-			errors.rejectValue("image", "Size.eventForm.image");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endTime", "NotEmpty");
 	}
 }

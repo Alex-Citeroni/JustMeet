@@ -15,7 +15,7 @@
 				class="d-block w-100" alt="First slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Cerca</h5>
-				<p>Cerca tra gli eventi già creati uno che fa al caso tuo.</p>
+				<p>Cerca tra gli eventi già creati uno che fa al caso tuo</p>
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -32,7 +32,7 @@
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Crea</h5>
 				<p>Nessun evento già presente soddisfa ciò che cerchi? Creane
-					uno tu.</p>
+					uno tu</p>
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -41,7 +41,7 @@
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Trova</h5>
 				<p>Grazie all'evento da te creato hai la possibilità di trovare
-					persone con i tuoi stessi interessi.</p>
+					persone con i tuoi stessi interessi</p>
 			</div>
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 			<h3>Partecipa a un evento</h3>
 			<p>Hai voglia di una partita a basket o semplicemente dei
 				compagni di studio ma non sai a chi chiedere? Cerca tra gli eventi
-				già creati se ce n'è qualcuno al caso tuo!</p>
+				già creati se ce n'è qualcuno che fa al caso tuo!</p>
 			<a href="events" class="btn btn-info" role="button">Partecipa</a>
 		</div>
 	</div>

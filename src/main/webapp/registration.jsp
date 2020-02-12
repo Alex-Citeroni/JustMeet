@@ -34,8 +34,8 @@
 					<h5>Sex</h5>
 					<form:select type="text" path="sex" class="form-control"
 						placeholder="Sex" autofocus="true">
-						<form:option value="Male">Male</form:option>
-						<form:option value="Female">Female</form:option>
+						<form:option value="Male"></form:option>
+						<form:option value="Female"></form:option>
 					</form:select>
 					<form:errors path="sex"></form:errors>
 				</div>

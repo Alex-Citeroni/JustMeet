@@ -29,12 +29,12 @@
 			<spring:bind path="category">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
 					<h5>Categoria</h5>
-					<form:select type="text" path="category" class="form-control"
-						placeholder="Category">
-						<form:option value="Sport">Sport</form:option>
-						<form:option value="Giochi">Giochi</form:option>
-						<form:option value="Istruzione">Istruzione</form:option>
-						<form:option value="Altro">Altro...</form:option>
+					<form:select type="text" path="category" class="form-control">
+						<form:option value="Scegli una categoria"></form:option>
+						<form:option value="Sport"></form:option>
+						<form:option value="Giochi"></form:option>
+						<form:option value="Istruzione"></form:option>
+						<form:option value="Altro"></form:option>
 					</form:select>
 					<form:errors path="category"></form:errors>
 				</div>
@@ -108,8 +108,11 @@
 		<div class="row">
 			<spring:bind path="cost">
 				<div class="form-group ${status.error ? 'has-error' : ''} col-sm-3">
-					<h5>Costo $</h5>
-					<form:input type="number" path="cost" class="form-control"></form:input>
+					<h5>Costo</h5>
+					<div class="input-group-prepend">
+						<div class="input-group-text">&euro;</div>
+						<form:input type="number" path="cost" class="form-control"></form:input>
+					</div>
 					<form:errors path="cost"></form:errors>
 				</div>
 			</spring:bind>
