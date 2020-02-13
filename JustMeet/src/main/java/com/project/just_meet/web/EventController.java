@@ -97,23 +97,40 @@ public class EventController {
 	
 	@PostMapping("/updateEvent")
 	public String updateEvent(@ModelAttribute("event") Event event) {
-		
+		event.setUsers(eventService.findById(event.getId()).getUsers());
 		eventService.save(event);
 		
 		return "redirect:/event?id="+event.getId();
 	}
 	
 	@GetMapping("/event")
-	public String getEvent(Model model, @RequestParam long id) {
+	public String getEvent(Model model, Principal user, @RequestParam long id) {
+		Event event= eventService.findById(id);
+		boolean creator=false;
+		boolean participate=false;
+		
+		if(user.getName().equals(event.getUsername())) {
+			creator=true;
+		}
+		
+		for(User u : event.getUsers() ) {
+			if(user.getName().equals(u.getUsername())) {
+				participate=true;
+			}
+		}
+		
+		
+		model.addAttribute("creator", creator);
+		model.addAttribute("participate", participate);	
 		model.addAttribute("event", eventService.findById(id));
-		model.addAttribute("id", new Event());
+		model.addAttribute("addPartecipation", new Event());
 		
 		return "event";
 	}
 
 	@PostMapping("/event")
 	public String addParticipation(@ModelAttribute("id") long id, Principal user, BindingResult bindingResult) {
-		
+		System.out.println("ADD");
 		User u= userService.findByUsername(user.getName());
 		Event e=eventService.findById(id);
 		e.getUsers().add(u);
@@ -122,7 +139,7 @@ public class EventController {
 		userService.update(u);
 		
 		return "redirect:/participations";
-	}
+	}	
 	
 	@GetMapping("participations")
 	public String partecipations(Model model, Principal user) {
@@ -137,7 +154,22 @@ public class EventController {
 		}
 		events.removeAll(myEvents);
 		model.addAttribute("participations", events);
+		model.addAttribute("removeParticipation", new Event());
+
 		return "/participations";
+	}
+	
+	@PostMapping("/participations")
+	public String removeParticipation(@ModelAttribute("id") long id, Principal user, BindingResult bindingResult) {
+		System.out.println("REMOVE");
+		User u= userService.findByUsername(user.getName());
+		Event e=eventService.findById(id);
+		e.getUsers().remove(u);
+		u.getEvents().remove(e);
+		eventService.save(e);
+		userService.update(u);
+		
+		return "redirect:/participations";
 	}
 	
 	

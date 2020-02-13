@@ -23,7 +23,9 @@
 
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-warning " data-toggle="modal"
-				data-target="#participantsView"><i class="fas fa-user-check"></i></button>
+				data-target="#participantsView">
+				<i class="fas fa-user-check"></i>
+			</button>
 
 			<!-- Modal -->
 			<div class="modal fade" id="participantsView" tabindex="-1"
@@ -49,17 +51,31 @@
 			</div>
 			<br> <b>Costo:</b> ${event.cost}
 		</div>
-		<form:form method="POST" modelAttribute="id">
+		<form:form method="POST" modelAttribute="addPartecipation">
 			<spring:bind path="id">
-				<button type="submit" class="btn btn-success col-sm-3">Partecipa <i class="fas fa-check-circle"></i></button>
+				<button id="addPartecipation" type="submit"
+					class="btn btn-success col-sm-3">
+					Partecipa <i class="fas fa-check-circle"></i>
+				</button>
 				<div class="form-group  invisible">
 					<form:select type="text" path="id" class="form-control">
-						<form:option value="${event.id}">${event.id}</form:option>
+						<form:option value="${event.id}"></form:option>
 					</form:select>
 				</div>
 			</spring:bind>
 		</form:form>
+		
 	</div>
 </div>
+
+<script type="text/javascript">
+	if ("${creator}" === "true" || "${participate}" === "true") {
+		document.getElementById("addPartecipation").style.display = "none";
+	}
+
+	if ("${creator}" === "true" || "${participate}" === "false") {
+		document.getElementById("deleteParticipation").style.display = "none";
+	}
+</script>
 
 <%@include file="common/footer.jspf"%>

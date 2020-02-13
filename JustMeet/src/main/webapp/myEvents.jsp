@@ -35,7 +35,8 @@
 					</form:form>
 
 					<a href="updateEvent?id=${event.id}" type="button"
-						class="btn btn-warning " data-target="#participantsView">Modifica</a>
+						class="btn btn-warning " data-target="#participantsView">Modifica
+					</a>
 
 					<button type="submit" class="btn btn-danger col-sm-"
 						onclick="return confirm('Il tuo evento sarà eliminato definitivamente. Sei sicuro?')">

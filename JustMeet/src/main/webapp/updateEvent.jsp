@@ -135,6 +135,7 @@
 		<hr>
 		<a href="myEvents" type="submit" class="btn btn-danger col-sm-6">Annulla</a>
 	</div>
-
 </div>
+
+
 <%@include file="common/footer.jspf"%>

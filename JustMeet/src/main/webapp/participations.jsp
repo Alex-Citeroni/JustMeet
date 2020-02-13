@@ -8,7 +8,7 @@
 	</div>
 	<hr>
 	<div class="alert alert-primary col-md-6" role="alert">
-		Gli eventi creati da te non sono inseriti. Per vederli <a
+		Gli eventi creati da te non sono visualizzati. Per vederli <a
 			href="/myEvents">clicca qui</a>.
 	</div>
 	<c:if test="${participations.size() == 0}">
@@ -22,6 +22,21 @@
 					<h4 class="card-title">${event.title}</h4>
 					<p class="card-text">${event.description}</p>
 					<a href="event?id=${event.id}" class="btn btn-primary">Apri</a>
+					<div>
+						<form:form method="POST" modelAttribute="removeParticipation">
+							<spring:bind path="id">
+								<button id="removePartecipation" type="submit"
+									class="btn btn-danger col-sm-6">
+									Revoca partecipazione <i class="fas fa-times-circle"></i>
+								</button>
+								<div class="form-group  invisible">
+									<form:select type="text" path="id" class="form-control">
+										<form:option value="${event.id}"></form:option>
+									</form:select>
+								</div>
+							</spring:bind>
+						</form:form>
+					</div>
 				</div>
 			</div>
 		</c:forEach>
