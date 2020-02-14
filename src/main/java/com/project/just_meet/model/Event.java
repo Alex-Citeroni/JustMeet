@@ -14,10 +14,11 @@ public class Event {
 
 	private double cost;
 
+	private long max_member;
+
 	private File image;
 
-	private String title, place, address, province, description, category, date, city, startingTime, username, endTime,
-			participants;
+	private String title, place, address, province, description, category, date, city, startingTime, username, endTime;
 
 	@ManyToMany
 	private Set<User> users = new HashSet<User>();
@@ -142,11 +143,11 @@ public class Event {
 		this.startingTime = startingTime;
 	}
 
-	public String getParticipants() {
-		return participants;
+	public long getMax_member() {
+		return max_member;
 	}
 
-	public void setParticipants(String participants) {
-		this.participants = participants;
+	public void setMax_member(long max_member) {
+		this.max_member = max_member;
 	}
 }

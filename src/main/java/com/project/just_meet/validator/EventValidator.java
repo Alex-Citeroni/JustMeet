@@ -33,7 +33,9 @@ public class EventValidator implements Validator {
 		if (event.getDescription().length() < 10 || event.getDescription().length() > 200)
 			errors.rejectValue("description", "Size.eventForm.description");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "participants", "NotEmpty");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "max_member", "NotEmpty");
+		if (event.getMax_member() < 2)
+			errors.rejectValue("max_member", "Size.eventForm.max_member");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "place", "NotEmpty");
 

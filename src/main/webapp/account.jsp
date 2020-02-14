@@ -6,22 +6,31 @@
 		<hr>
 		<h2>Dati utente</h2>
 		<div class="shadow-sm p-3 mb-5 bg-white rounded">
-			<h5>Email: ${user.email}</h5>
+			<h5>
+				<i class="far fa-envelope"></i> Email: ${user.email}
+			</h5>
 			<hr>
-			<h5>Nome: ${user.name}</h5>
+			<h5>
+				<i class="fas fa-signature"></i> Nome e cognome: ${user.name}
+				${user.surname}
+			</h5>
 			<hr>
-			<h5>Cognome: ${user.surname}</h5>
+			<h5>
+				<i class="fas fa-venus-mars"></i> Sesso: ${user.sex}
+			</h5>
 			<hr>
-			<h5>Sesso: ${user.sex}</h5>
+			<h5>
+				<i class="far fa-calendar-alt"></i> Data di nascita:
+				${user.birthday}
+			</h5>
 			<hr>
-			<h5>Data di nascita: ${user.birthday}</h5>
-			<hr>
-			<h5>Residenza: ${user.city}</h5>
+			<h5>
+				<i class="fas fa-map-marked-alt"></i> Residenza: ${user.city}
+			</h5>
 		</div>
 		<div class="row text-center col-sm-12">
-			<a class="btn btn-lg btn-primary"
-				href="updateUser?username=${user.username}" role="button"> <i
-				class="fas fa-pen"> Modifica account</i>
+			<a class="btn btn-lg btn-primary" href="updateUser" role="button">
+				<i class="fas fa-pen"> Modifica</i>
 			</a>
 			<hr>
 			<button class="btn btn-lg btn-danger" type="submit"

@@ -14,5 +14,21 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<script>
+	function myFunction() {
+		var x = document.getElementById("myInput");
+		if (x.type === "password")
+			x.type = "text";
+		else
+			x.type = "password";
+	}
+</script>
+<script type="text/javascript">
+	if ("${creator}" === "true" || "${participate}" === "true")
+		document.getElementById("addParticipation").style.display = "none";
+
+	if ("${creator}" === "true" || "${participate}" === "false")
+		document.getElementById("deleteParticipation").style.display = "none";
+</script>
 </body>
 </html>

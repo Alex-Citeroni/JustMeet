@@ -79,10 +79,8 @@ public class UserController {
 		if (bindingResult.hasErrors())
 			return "account";
 
-		User user = userService.findByUsername(username);
-
-		for (Event event : user.getEvents()) {
-			event.getUsers().remove(user);
+		for (Event event : userService.findByUsername(username).getEvents()) {
+			event.getUsers().remove(userService.findByUsername(username));
 			eventService.save(event);
 		}
 
@@ -94,16 +92,24 @@ public class UserController {
 	}
 
 	@GetMapping("/updateUser")
-	public String updateUser(Model model, @RequestParam String username) {
-		model.addAttribute("user", userService.findByUsername(username));
+	public String updateUser(Model model, Principal user) {
+		model.addAttribute("user", userService.findByUsername(user.getName()));
 
 		return "/updateUser";
 	}
 
 	@PostMapping("/updateUser")
-	public String updateUser(@ModelAttribute("user") User user) {
-		userService.save(user);
+	public String updateUser(@ModelAttribute("user") User user, BindingResult bindingResult) {
+		userValidator.validate(user, bindingResult);
 
-		return "redirect:/user?username=" + user.getUsername();
+		user.setPassword(userService.findByUsername(user.getUsername()).getPassword());
+
+		user.setEvents(userService.findByUsername(user.getUsername()).getEvents());
+
+		user.setRoles(userService.findByUsername(user.getUsername()).getRoles());
+
+		userService.update(user);
+
+		return "redirect:/account";
 	}
 }

@@ -68,15 +68,18 @@
 				sei piu tipo da Dungeons and Dragons? Sappiamo quanto te che la
 				ricerca di compagni potrebbere essere estenuante ma questo è il
 				posto giusto per te! Crea un tuo evento e se qualcuno sarà
-				interessato si unirà alla tua attività.</p>
-			<a href="eventCreation" class="btn btn-info" role="button">Crea</a>
+				interessato si unirà alla tua attività!</p>
+			<a href="eventCreation" class="btn btn-info" role="button"><i
+				class="fas fa-plus"></i> Crea</a>
 		</div>
+		<hr>
 		<div class="col-md-6">
 			<h3>Partecipa a un evento</h3>
 			<p>Hai voglia di una partita a basket o semplicemente dei
 				compagni di studio ma non sai a chi chiedere? Cerca tra gli eventi
 				già creati se ce n'è qualcuno che fa al caso tuo!</p>
-			<a href="events" class="btn btn-info" role="button">Partecipa</a>
+			<a href="events" class="btn btn-info" role="button"><i
+				class="fas fa-sign-in-alt"></i> Partecipa</a>
 		</div>
 	</div>
 </div>
