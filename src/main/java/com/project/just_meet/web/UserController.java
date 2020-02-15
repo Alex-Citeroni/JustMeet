@@ -100,13 +100,15 @@ public class UserController {
 
 	@PostMapping("/updateUser")
 	public String updateUser(@ModelAttribute("user") User user, BindingResult bindingResult) {
-		userValidator.validate(user, bindingResult);
-
 		user.setPassword(userService.findByUsername(user.getUsername()).getPassword());
+
+		user.setPasswordConfirm(userService.findByUsername(user.getUsername()).getPassword());
 
 		user.setEvents(userService.findByUsername(user.getUsername()).getEvents());
 
 		user.setRoles(userService.findByUsername(user.getUsername()).getRoles());
+		
+		userValidator.validate(user, bindingResult);
 
 		userService.update(user);
 

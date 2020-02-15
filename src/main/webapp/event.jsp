@@ -81,7 +81,8 @@
 				</div>
 				<hr>
 				<h5>
-					<i class="fas fa-money-bill-wave"></i> Costo: &euro; ${event.cost} (pagamento sul posto)
+					<i class="fas fa-money-bill-wave"></i> Costo: &euro; ${event.cost}
+					(pagamento sul posto)
 				</h5>
 			</div>
 			<h4>

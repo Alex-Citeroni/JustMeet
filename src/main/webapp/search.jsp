@@ -25,18 +25,18 @@
 					<div class="card-body">
 						<h4 class="card-title">${event.title}</h4>
 						<hr>
-						<h5 class="card-text">${event.description}</h5>
-						<br>
-						<h5 class="card-text">
-							<i class="far fa-calendar-alt"></i> ${event.date}
-						</h5>
-						<br>
+						<h5 class="card-title">${event.description}</h5>
+						<p class="card-text">
+							<b><i class="far fa-calendar-alt"></i> Data: ${event.date}</b>
+						</p>
+						<p class="card-text">
+							<b><i class="fas fa-male"></i> Organizzatore:
+								${event.username}</b>
+						</p>
 					</div>
+					<a href="event?id=${event.id}" class="btn btn-primary"><i
+						class="fas fa-external-link-alt"></i> Apri</a>
 				</div>
-				<div class="text-center">
-						<a href="event?id=${event.id}" class="btn btn-primary"><i
-							class="fas fa-external-link-alt"></i> Apri</a>
-					</div>
 			</c:forEach>
 		</div>
 	</div>

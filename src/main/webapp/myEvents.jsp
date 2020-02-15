@@ -14,7 +14,7 @@
 		<h4 class="text-center py-3 empty-events">Nessun evento</h4>
 	</c:if>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<c:forEach var="event" items="${list}">
 				<br>
 				<form:form method="POST" modelAttribute="id">
@@ -40,10 +40,10 @@
 						</div>
 					</div>
 					<div class="text-center col-sm-12">
-							<a href="updateEvent?id=${event.id}" type="button"
-								class="btn btn-warning col-sm-12" data-target="#participantsView"><i
-								class="fas fa-pen"></i></a> <br>
-						</div>
+						<a href="updateEvent?id=${event.id}" type="button"
+							class="btn btn-warning col-sm-12" data-target="#participantsView"><i
+							class="fas fa-pen"></i></a> <br>
+					</div>
 					<spring:bind path="id">
 						<div class="form-group col-sm-3 invisible">
 							<form:select type="text" path="id" class="form-control">
