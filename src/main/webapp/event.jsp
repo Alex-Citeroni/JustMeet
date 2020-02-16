@@ -2,11 +2,101 @@
 <hr>
 <div class="container">
 	<div class="row">
-		<h2>${event.title}</h2>
-		<hr>
-		<h4>Categoria: ${event.category}</h4>
+		<div class="shadow-sm p-3 mb-5 bg-white rounded col-sm-6">
+			<h1>${event.title}</h1>
+			<c:if test="${event.category == 'Sport'}">
+				<img class="card-img-top" src="resources/img/default_img/sport.jpg">
+			</c:if>
+			<c:if test="${event.category == 'Altro'}">
+				<img class="card-img-top" src="resources/img/default_img/altro.jpg">
+			</c:if>
+			<c:if test="${event.category == 'Istruzione'}">
+				<img class="card-img-top" src="resources/img/default_img/study.jpg">
+			</c:if>
+			<c:if test="${event.category == 'Giochi'}">
+				<img class="card-img-top" src="resources/img/default_img/games.jpg">
+			</c:if>
+			<c:if var="event.category" test="${event.category == Giochi}">
+				<img class="card-img-top" src="resources/img/default_img/games.jpg">
+			</c:if>
+		</div>
+		<div class="col-md-6">
+			<h4>
+				<i class="far fa-address-book"></i> Categoria
+			</h4>
+			<div class="shadow-sm p-3 mb-5 bg-white rounded">
+				<c:if test="${event.category == 'Sport'}">
+					<h5>
+						<i class="fas fa-futbol"></i> ${event.category}
+					</h5>
+				</c:if>
+				<c:if test="${event.category == 'Altro'}">
+					<h5>
+						<i class="far fa-lightbulb"></i> ${event.category}
+					</h5>
+				</c:if>
+				<c:if test="${event.category == 'Istruzione'}">
+					<h5>
+						<i class="fas fa-book"></i> ${event.category}
+					</h5>
+				</c:if>
+				<c:if test="${event.category == 'Giochi'}">
+					<h5>
+						<i class="fas fa-futbol"></i> ${event.category}
+					</h5>
+				</c:if>
+				<c:if var="event.category" test="${event.category == Giochi}">
+					<h5>
+						<i class="fas fa-chess-pawn"></i> ${event.category}
+					</h5>
+				</c:if>
+			</div>
+			<h4>
+				<i class="far fa-address-book"></i> Contatti
+			</h4>
+			<div class="shadow-sm p-3 mb-5 bg-white rounded">
+				<h5>
+					<i class="fas fa-male"></i> Organizzatore: ${event.username}
+				</h5>
+				<hr>
+				<h5>
+					<button type="button" class="btn btn-secondary" data-toggle="modal"
+						data-target="#emailView">
+						<i class="fas fa-envelope-open-text"></i>
+					</button>
+					Email: ${user.email}
+				</h5>
+			</div>
+			<div class="modal fade" id="emailView" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalScrollableTitle">Invia
+								un email a ${event.username}</h5>
+						</div>
+						<form method="POST" action="mailto:${user.email}"
+							enctype="text/plain">
+							<div class="modal-body">
+								<h5>Oggetto del messaggio</h5>
+								<input type="text" name="subject" class="form-control">
+								<hr>
+								<h5>Testo</h5>
+								<textarea name="body" class="form-control"></textarea>
+							</div>
+							<div class="modal-footer">
+								<input type="submit" value="Invia Email" class="btn btn-primary">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Chiudi</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<hr>
 	<div class="row">
 		<div class="col-md-6">
 			<h4>

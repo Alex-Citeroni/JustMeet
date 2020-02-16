@@ -131,44 +131,8 @@
 							<button class="btn btn-primary" type="submit">
 								<i class="fas fa-save"></i> Salva
 							</button>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
-							<hr>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button type="button" class="text-center btn btn-secondary"
 								data-dismiss="modal">Chiudi</button>
 						</div>

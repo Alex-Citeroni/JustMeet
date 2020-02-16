@@ -12,7 +12,8 @@
 			href="#Istruzione" role="tab"><i class="fas fa-book"></i>
 				Istruzione</a></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="tab"
-			href="#Giochi" role="tab"><i class="fas fa-chess-pawn"></i>Giochi</a></li>
+			href="#Giochi" role="tab"><i class="fas fa-chess-pawn"></i>
+				Giochi</a></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="tab"
 			href="#Altro" role="tab"><i class="far fa-lightbulb"></i>
 				Altro...</a></li>

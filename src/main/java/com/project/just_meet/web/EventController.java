@@ -114,6 +114,7 @@ public class EventController {
 			if (user.getName().equals(u.getUsername()))
 				participate = true;
 
+		model.addAttribute("user", userService.findByUsername(eventService.findById(id).getUsername()));
 		model.addAttribute("creator", creator);
 		model.addAttribute("participate", participate);
 		model.addAttribute("event", eventService.findById(id));
