@@ -11,8 +11,11 @@
 			</h5>
 			<hr>
 			<h5>
-				<i class="fas fa-signature"></i> Nome e cognome: ${user.name}
-				${user.surname}
+				<i class="fas fa-signature"></i> Nome: ${user.name}
+			</h5>
+			<hr>
+			<h5>
+				<i class="fas fa-signature"></i> Cognome: ${user.surname}
 			</h5>
 			<hr>
 			<h5>
@@ -30,16 +33,16 @@
 		</div>
 		<div class="row text-center col-sm-12">
 			<a class="btn btn-lg btn-primary" href="updateUser" role="button">
-				<i class="fas fa-pen"> Modifica</i>
+				<i class="fas fa-pen"></i> Modifica
 			</a>
 			<hr>
 			<button class="btn btn-lg btn-danger" type="submit"
 				onclick="return confirm('Il tuo account sarà eliminato definitivamente. Sei sicuro?')">
-				<i class="fas fa-trash-alt"> Elimina account</i>
+				<i class="fas fa-trash-alt"></i> Elimina account
 			</button>
 		</div>
 		<spring:bind path="username">
-			<div class="form-group col-sm-3  invisible">
+			<div class="form-group col-sm-3 invisible">
 				<form:select type="text" path="username" class="form-control">
 					<form:option value="${user.username}"></form:option>
 				</form:select>

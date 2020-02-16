@@ -12,8 +12,8 @@
 	<hr>
 	<c:if test="${result.size() == 0}">
 		<h4 class="text-center py-3 empty-events">
-			<i class="far fa-folder-open"></i> Nessun evento soddisfa i requisiti
-			di ricerca
+			<i class="fas fa-search"></i> Nessun evento soddisfa i requisiti di
+			ricerca
 		</h4>
 	</c:if>
 	<div class="row">

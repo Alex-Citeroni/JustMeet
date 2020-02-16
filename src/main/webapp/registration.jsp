@@ -84,7 +84,9 @@
 						<i class="fas fa-key"></i> Password
 					</h5>
 					<form:input type="password" path="password" class="form-control"
-						placeholder="Password"></form:input>
+						placeholder="Password" id="myInput"></form:input>
+					<input type="checkbox" onclick="myFunction()"> Show
+					Password
 					<form:errors path="password"></form:errors>
 				</div>
 			</spring:bind>

@@ -26,9 +26,8 @@
 <script type="text/javascript">
 	if ("${creator}" === "true" || "${participate}" === "true")
 		document.getElementById("addParticipation").style.display = "none";
-
 	if ("${creator}" === "true" || "${participate}" === "false")
-		document.getElementById("deleteParticipation").style.display = "none";
+		document.getElementById("alert").style.display = "none";
 </script>
 </body>
 </html>

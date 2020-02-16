@@ -52,7 +52,7 @@
 					class="form-inline mr-auto">
 					<input class="form-control ds-input" placeholder="Cerca evento"
 						aria-label="Search" name="s" type="search"> &nbsp;
-					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+					<button class="btn btn-danger my-2 my-sm-0" type="submit">
 						<i class="fas fa-search"></i>
 					</button>
 				</form>

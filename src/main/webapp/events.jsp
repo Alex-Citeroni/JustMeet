@@ -25,11 +25,12 @@
 					<i class="far fa-folder-open"></i> Nessun evento
 				</h4>
 			</c:if>
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<c:forEach var="event" items="${allList}">
 					<br>
 					<div class="card">
-						<img class="card-img-top img-fluid" src="${event.image}" alt="">
+						<img class="card-img-top img-fluid"
+							src="resources/img/default_img/all.png" alt="">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
 							<hr>
@@ -55,11 +56,12 @@
 					<i class="far fa-folder-open"></i> Nessun evento
 				</h4>
 			</c:if>
-			<div class=" col-md-4">
+			<div class="col-md-5">
 				<c:forEach var="event" items="${sportList}">
 					<br>
 					<div class="card">
-						<img class="card-img-top img-fluid" src="${event.image}" alt="">
+						<img class="card-img-top img-fluid"
+							src="resources/img/default_img/sport.jpg">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
 							<hr>
@@ -85,11 +87,12 @@
 					<i class="far fa-folder-open"></i> Nessun evento
 				</h4>
 			</c:if>
-			<div class=" col-md-4">
+			<div class=" col-md-5">
 				<c:forEach var="event" items="${istrList}">
 					<br>
 					<div class="card">
-						<img class="card-img-top img-fluid" src="${event.image}" alt="">
+						<img class="card-img-top img-fluid"
+							src="resources/img/default_img/study.jpg">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
 							<hr>
@@ -115,11 +118,12 @@
 					<i class="far fa-folder-open"></i> Nessun evento
 				</h4>
 			</c:if>
-			<div class=" col-md-4">
+			<div class="col-md-5">
 				<c:forEach var="event" items="${giochiList}">
 					<br>
 					<div class="card">
-						<img class="card-img-top img-fluid" src="${event.image}" alt="">
+						<img class="card-img-top img-fluid"
+							src="resources/img/default_img/games.jpg">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
 							<hr>
@@ -145,11 +149,12 @@
 					<i class="far fa-folder-open"></i> Nessun evento
 				</h4>
 			</c:if>
-			<div class=" col-md-4">
+			<div class="col-md-5">
 				<c:forEach var="event" items="${altroList}">
 					<br>
 					<div class="card">
-						<img class="card-img-top img-fluid" src="${event.image}" alt="">
+						<img class="card-img-top img-fluid"
+							src="resources/img/default_img/altro.jpg">
 						<div class="card-body">
 							<h4 class="card-title">${event.title}</h4>
 							<hr>

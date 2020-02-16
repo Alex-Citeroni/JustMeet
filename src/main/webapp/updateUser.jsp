@@ -83,12 +83,98 @@
 			</div>
 		</spring:bind>
 		<hr>
-		<button>Cambia password</button>
-		<hr>
 		<div class="row text-center col-sm-12">
 			<button class="btn btn-lg btn-primary" type="submit">
 				<i class="fas fa-save"></i> Salva
 			</button>
+			<hr>
+			<button type="button" class="btn btn-warning" data-toggle="modal"
+				data-target="#changePassword">
+				<i class="fas fa-key"></i> Cambia password
+			</button>
+			<div class="modal fade" id="changePassword" tabindex="-1"
+				role="dialog" aria-labelledby="exampleModalScrollableTitle"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalScrollableTitle">Cambia
+								password</h5>
+						</div>
+						<div class="modal-body">
+							<spring:bind path="password">
+								<div
+									class="form-group ${status.error ? 'has-error' : ''} col-sm-12">
+									<h5>
+										<i class="fas fa-key"></i> Nuova password
+									</h5>
+									<form:input type="password" path="password"
+										class="form-control" id="myInput"></form:input>
+									<input type="checkbox" onclick="myFunction()"> Show
+									Password
+									<form:errors path="password"></form:errors>
+								</div>
+							</spring:bind>
+							<spring:bind path="passwordConfirm">
+								<div
+									class="form-group ${status.error ? 'has-error' : ''} col-sm-12">
+									<h5>
+										<i class="fas fa-key"></i> Conferma password
+									</h5>
+									<form:input type="password" path="passwordConfirm"
+										class="form-control"></form:input>
+									<form:errors path="passwordConfirm"></form:errors>
+								</div>
+							</spring:bind>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-primary" type="submit">
+								<i class="fas fa-save"></i> Salva
+							</button>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+							<button type="button" class="text-center btn btn-secondary"
+								data-dismiss="modal">Chiudi</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<hr>
 			<a class="btn btn-lg btn-danger" role="button" href="account"> <i
 				class="fas fa-window-close"></i> Annulla

@@ -117,6 +117,9 @@
 				</div>
 			</spring:bind>
 		</form:form>
+		<div class="alert alert-success col-sm-12" id="alert" role="alert">
+			<i class="fas fa-user-check"></i> Partecipi già a questo evento!
+		</div>
 	</div>
 </div>
 <%@include file="common/footer.jspf"%>
