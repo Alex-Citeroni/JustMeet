@@ -2,55 +2,26 @@
 <hr>
 <div class="container">
 	<div class="row">
-		<div class="shadow-sm p-3 mb-5 bg-white rounded col-sm-6">
-			<h1>${event.title}</h1>
-			<c:if test="${event.category == 'Sport'}">
-				<img class="card-img-top" src="resources/img/default_img/sport.jpg">
-			</c:if>
-			<c:if test="${event.category == 'Altro'}">
-				<img class="card-img-top" src="resources/img/default_img/altro.jpg">
-			</c:if>
-			<c:if test="${event.category == 'Istruzione'}">
-				<img class="card-img-top" src="resources/img/default_img/study.jpg">
-			</c:if>
-			<c:if test="${event.category == 'Giochi'}">
-				<img class="card-img-top" src="resources/img/default_img/games.jpg">
-			</c:if>
-			<c:if var="event.category" test="${event.category == Giochi}">
-				<img class="card-img-top" src="resources/img/default_img/games.jpg">
-			</c:if>
+		<div class="shadow-sm p-3 mb-5 bg-white rounded col-sm-5">
+			<img class="card-img-top" id="image">
 		</div>
 		<div class="col-md-6">
 			<h4>
-				<i class="far fa-address-book"></i> Categoria
+				<i class="fas fa-heading"></i> Titolo
 			</h4>
 			<div class="shadow-sm p-3 mb-5 bg-white rounded">
-				<c:if test="${event.category == 'Sport'}">
-					<h5>
-						<i class="fas fa-futbol"></i> ${event.category}
-					</h5>
-				</c:if>
-				<c:if test="${event.category == 'Altro'}">
-					<h5>
-						<i class="far fa-lightbulb"></i> ${event.category}
-					</h5>
-				</c:if>
-				<c:if test="${event.category == 'Istruzione'}">
-					<h5>
-						<i class="fas fa-book"></i> ${event.category}
-					</h5>
-				</c:if>
-				<c:if test="${event.category == 'Giochi'}">
-					<h5>
-						<i class="fas fa-futbol"></i> ${event.category}
-					</h5>
-				</c:if>
-				<c:if var="event.category" test="${event.category == Giochi}">
-					<h5>
-						<i class="fas fa-chess-pawn"></i> ${event.category}
-					</h5>
-				</c:if>
+				<h2>${event.title}</h2>
 			</div>
+			<h4>
+				<i class="far fa-comment-alt"></i> Descrizione
+			</h4>
+			<div class="shadow-sm p-3 mb-5 bg-white rounded">
+				<h5>${event.description}</h5>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
 			<h4>
 				<i class="far fa-address-book"></i> Contatti
 			</h4>
@@ -95,16 +66,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<h4>
-				<i class="far fa-comment-alt"></i> Descrizione
-			</h4>
-			<div class="shadow-sm p-3 mb-5 bg-white rounded">
-				<h5>${event.description}</h5>
-			</div>
+
 			<h4>
 				<i class="fas fa-globe"></i> Dove
 			</h4>

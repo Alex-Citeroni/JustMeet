@@ -28,6 +28,14 @@
 		document.getElementById("addParticipation").style.display = "none";
 	if ("${creator}" === "true" || "${participate}" === "false")
 		document.getElementById("alert").style.display = "none";
+	if ("${category}" === "Sport")
+		document.getElementById("image").src = "resources/img/default_img/sport.jpg";
+	if ("${category}" === "Altro")
+		document.getElementById("image").src = "resources/img/default_img/altro.jpg";
+	if ("${category}" === "Istruzione")
+		document.getElementById("image").src = "resources/img/default_img/study.jpg";
+	if ("${category}" === "Giochi")
+		document.getElementById("image").src = "resources/img/default_img/games.jpg";
 </script>
 </body>
 </html>

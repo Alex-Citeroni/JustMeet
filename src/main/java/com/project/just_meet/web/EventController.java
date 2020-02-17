@@ -117,6 +117,7 @@ public class EventController {
 		model.addAttribute("user", userService.findByUsername(eventService.findById(id).getUsername()));
 		model.addAttribute("creator", creator);
 		model.addAttribute("participate", participate);
+		model.addAttribute("category", eventService.findById(id).getCategory());
 		model.addAttribute("event", eventService.findById(id));
 		model.addAttribute("addParticipation", new Event());
 

@@ -10,8 +10,7 @@
 	</ol>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img
-				src="https://source.unsplash.com/1600x700/?soccer,basketball,volleyball,tablegame"
+			<img src="resources/img/carousel_img/calcetto.jpg"
 				class="d-block w-100" alt="First slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Cerca</h5>
@@ -19,16 +18,16 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="https://source.unsplash.com/1600x700/?boardgame"
-				class="d-block w-100" alt="Second slide">
+			<img src="resources/img/carousel_img/chess.jpg" class="d-block w-100"
+				alt="Second slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Partecipa</h5>
 				<p>Partecipa ad eventi di altri utenti e fai nuove amicizie!</p>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="https://source.unsplash.com/1600x700/?study,school,friends"
-				class="d-block w-100" alt="Third slide">
+			<img src="resources/img/carousel_img/study.jpg" class="d-block w-100"
+				alt="Third slide">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Crea</h5>
 				<p>Nessun evento già presente soddisfa ciò che cerchi? Creane
@@ -36,7 +35,7 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="https://source.unsplash.com/1600x700/?sport"
+			<img src="resources/img/carousel_img/football.jpg"
 				class="d-block w-100" alt="">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Trova</h5>
@@ -57,9 +56,13 @@
 </div>
 <br>
 <div class="container">
-	<h2>Benvenuto in JustMeet
-		${pageContext.request.userPrincipal.name}! Scopri cosa puoi fare</h2>
-	<hr>
+	<div class="text-center">
+		<h2>Benvenuto in JustMeet
+			${pageContext.request.userPrincipal.name}!</h2>
+		<hr>
+		<h2>Scopri cosa puoi fare!</h2>
+		<br>
+	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<h3>Crea il tuo evento</h3>
