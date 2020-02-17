@@ -21,7 +21,22 @@
 			<c:forEach var="event" items="${result}">
 				<br>
 				<div class="card">
-					<img class="card-img-top img-fluid" src="${event.image}" alt="">
+					<c:if test="${event.category == 'Sport'}">
+						<img class="card-img-top"
+							src="resources/img/default_img/sport.jpg">
+					</c:if>
+					<c:if test="${event.category == 'Altro'}">
+						<img class="card-img-top"
+							src="resources/img/default_img/altro.jpg">
+					</c:if>
+					<c:if test="${event.category == 'Istruzione'}">
+						<img class="card-img-top"
+							src="resources/img/default_img/study.jpg">
+					</c:if>
+					<c:if test="${event.category == 'Giochi'}">
+						<img class="card-img-top"
+							src="resources/img/default_img/games.jpg">
+					</c:if>
 					<div class="card-body">
 						<h4 class="card-title">${event.title}</h4>
 						<hr>

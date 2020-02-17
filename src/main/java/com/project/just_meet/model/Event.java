@@ -6,8 +6,6 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
 
-
-
 @Entity
 @Table(name = "event")
 public class Event {
@@ -20,7 +18,7 @@ public class Event {
 	private long max_member;
 
 	private File image;
-	
+
 	private Date date;
 
 	private String title, place, address, province, description, category, city, startingTime, username, endTime;
