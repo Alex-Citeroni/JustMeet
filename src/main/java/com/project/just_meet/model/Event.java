@@ -1,9 +1,12 @@
 package com.project.just_meet.model;
 
 import java.io.File;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
+
+
 
 @Entity
 @Table(name = "event")
@@ -17,8 +20,10 @@ public class Event {
 	private long max_member;
 
 	private File image;
+	
+	private Date date;
 
-	private String title, place, address, province, description, category, date, city, startingTime, username, endTime;
+	private String title, place, address, province, description, category, city, startingTime, username, endTime;
 
 	@ManyToMany
 	private Set<User> users = new HashSet<User>();
@@ -29,14 +34,6 @@ public class Event {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
 	}
 
 	public double getCost() {
@@ -149,5 +146,13 @@ public class Event {
 
 	public void setMax_member(long max_member) {
 		this.max_member = max_member;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }
